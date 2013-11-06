@@ -1,0 +1,1 @@
+{"0":"type_id","1":"type","2":"pid","3":"isdel","_autoinc":true,"_pk":"type_id","_type":{"type_id":"int(11)","type":"varchar(255)","pid":"int(11)","isdel":"tinyint(1)"}}

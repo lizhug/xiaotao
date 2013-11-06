@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>用户详情 | 校淘</title>
+        <include file="Public:meta-keywords" />
+        <link type="text/css" rel="stylesheet" href="/style/css/intl_account/v1/user_info.css?v={$VERSION}" />
+    </head>
+    <body>
+        <include file="Public:header-new" />
+        <include file="Public:search-block" />
+        <include file="Public:nav_no_focus" />
+        <div class="site-main bg-index-site">
+            <div class="site-body user-info-body">
+                <div class="user-main">
+                    <img class="user-img" src="imgURL/{$data['head']}" alt="header" />
+                    <div class="user-main-sider">
+                        <input id="userID" value="{$data['uid']}" type="hidden" />
+                        <div class="user-name">{$data["uname"]}</div>
+                        <div class="user-detail-value">{$data["sex"]} | {$data["city"] | getArea} | {$data["college"] | getSchool} <a href="javascript:void(0);" class="get-more-user-info" id="get-more-user-info"> 查看更多资料 >> </a></div>
+                    </div>
+                </div>
+                 <div id="user-info-view">
+                     <ul class="intr">
+                         <li class="user-section-title"><strong>基本资料</strong></li>
+                         <li><span class="user-detail-title">校+ ID</span><span class="user-detail-value">{$data["xiaoplus"]}</span></li>
+                         <li><span class="user-detail-title">所在地</span><span class="user-detail-value">{$data["location"]}</span></li>
+                         <li><span class="user-detail-title">性别</span><span class="user-detail-value">{$data["sex"]}</span></li>
+                         <li><span class="user-detail-title">生日</span><span class="user-detail-value">{$data["birth"]}</span></li>
+                         <li><span class="user-detail-title">QQ</span><span class="user-detail-value">{$data["qq"]}</span></li>
+                     </ul>
+                     <ul class="edu">
+                         <li class="user-section-title"><strong>教育信息</strong></li>
+                         <li><span class="user-detail-title">大学</span><span class="user-detail-value">{$data["college"]|getSchool}</span></li>
+                         <li><span class="user-detail-title">入学年份</span><span class="user-detail-value">{$data["year"]}</span></li>
+                     </ul>
+                 </div>
+                <ul class="pub" id="publist">
+                    <li class="user-section-title"><strong>他发布的信息</strong></li>
+                     <volist name="publist" id="vo">
+                        <li class="pub-sub"><span class="user-detail-title"><a class="title" title="{$vo['title']}" href="domainURL/Detail/index/id/{$vo['pub_id']}" target="_blank" >{$vo["title"]}</a><span class="catalog">({$vo["province"]}-{$vo['school']}-{$vo["type"]}-{$vo["sub_type"] })</span></span><span class="date">{$vo["ctime"]}</span></li>
+                     </volist>
+                 </ul>
+                 <div id="get-more" index="1" ><div style="display: none"><img src='/style/img/common/icon/loading.gif'/><span style='vertical-align: top; margin-left: 20px;'>正在加载...</span></div><span class="more">更多</span></div>
+{$page}
+             </div>
+        </div>
+        <include file="Public:foot" />
+        <script type="text/javascript" src="/style/js/intl_account/v1/user_info.js?v={$VERSION}"></script>
+    </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE>
+<html>
+    <include file="Admin:model_head" />
+    <include file="Admin:model_body" />
+    <div id="user-detail" class="schoolList">
+        <table class="table pubList-detail">
+        <volist name="schoolData" id="vo">
+        <div>
+            <pre>sid <input type="text" name="school-id" readonly value= "{$vo['school_id']}" title="{$vo['school_id']}" /> name <input type="text" name="school" value= "{$vo['school']}" title="{$vo['school']}" /> Area <input type="text" readonly name="area" value= "{$vo['area_id']|getArea}" title="{$vo['area_id']|getArea}" /> 修改为 <select class="province" style="width: 85px;"><volist name="area" id="vo"><option value="{$vo['area_id']}">{$vo["title"]}</option></volist>
+                 </select><select class="city" style="width: 85px;margin-left: 20px;"><volist name="cityList" id="vo"><option value="{$vo['area_id']}">{$vo["title"]}</option></volist></select>  
+                <input type="button" class="school-change" value="修改" /><input type="button" class="school-delete" value="删除" /></pre>
+        </div>
+        </volist>
+        <div>
+            <pre>school name: <input type="text" name="school" />       area: <select class="province" style="width: 85px;">
+                     <volist name="area" id="vo">
+                         <option value="{$vo['area_id']}">{$vo["title"]}</option>
+                     </volist>
+                 </select>
+                 <select class="city" style="width: 85px;margin-left: 20px;">
+                     <volist name="cityList" id="vo">
+                         <option value="{$vo['area_id']}">{$vo["area_id"]}</option>
+                     </volist>
+                 </select><input type="button" class="school-add" value="添加" /></pre>
+        </div>
+        </table>
+    </div>
+    <include file="Admin:model_foot" />
+    <script type="text/javascript">
+        $(document).ready(function() {
+            if(!$(".city").val())
+                $(".city").append('<option value="2">北京市</option> ');
+        })
+    </script>
+</html>
+

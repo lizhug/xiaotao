@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>注册 | 校淘</title>
+        <include file="Public:meta-keywords" />
+        <link type="text/css" rel="stylesheet" href="/style/css/intl_register/v1/xt_register.css?v={$VERSION}" />
+    </head>
+    <body>
+        <include file="Public:header-new" />
+        <include file="Public:search-block" />
+        <include file="Public:nav_no_focus" />
+        <div class="site-main bg-index-site">
+            <form action="" method="post"  id="form-register">
+                <div class="site-register">
+                    <div id="tip"></div>
+                    <div class="form-input"><label for="user" class="con">用户名</label><input type="text" input_type="name" id="user" placeholder="用户名" autocomplete="off" /><span class="register-notice"></span></div>
+                    <div class="form-input"><label for="user" class="con">邮箱</label><input type="email" input_type="mail" id="email" placeholder="邮箱" autocomplete="off" /><span class="register-notice"></span></div>
+                    <div class="form-input"><label for="user" class="con">密码</label><input type="password" id="pwd" input_type="pwd" placeholder="密码长度为6-16位" autocomplete="off" /><span class="register-notice"></span></div>
+                    <div class="form-input"><label for="verifyCode" class="con">验证码</label><input type="text" placeholder="验证码" id="verifyCode" /><img src="domainURL/Public/verifyCode" alt="验证码" title="点击更换验证码" id="verify" /></div>
+                    <div class="form-input"><a class="btn btn-blue" id="submitRegister">同意以下协议并注册</a><a href="domainURL/Register/deal" id="deal" target="_blank">校淘使用协议</a></div>
+                </div>
+                <div class="site-login">
+                    <h2>已有账号?</h2><a href="domainURL/Login">登录</a>
+                    <div class="wb-login">
+                        <div class="sns-login-tip"><span>使用其他账户:</span></div> <!--a href="{:U('login?type=qq')}" id="qqlogin">QQ</a--><a href="{:U('Login/login?type=sina')}" class="weibo-login">新浪微博</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <include file="Public:foot" />
+        <script type="text/javascript" src="/style/js/intl_register/v1/xt_register.js?v={$VERSION}"></script>
+    </body>
+</html>

@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>登陆 | 校淘</title>
+        <include file="Public:meta-keywords" />
+        <link type="text/css" rel="stylesheet" href="/style/css/intl_login/v1/xt_login.css?v={$VERSION}" />
+    </head>
+    <body>
+        <include file="Public:header-new" />
+        <include file="Public:search-block" />
+        <include file="Public:nav_no_focus" />
+        <div class="site-main bg-index-site">
+            <div class="site-body">
+                <div class="form-image"></div>
+                <form action="" method="post" class="form-login">
+                    <div id="tip"></div>
+                    <div class="form-input"><label class="con" for="user">邮箱</label><input type="text" name="user" id="user"  placeholder="账号/邮箱" autocomplete="off" /></div>
+                    <div class="form-input"><label class="con" for="password">密码</label><input type="password" id="password"  name="password" maxsize="18" placeholder="密码" autocomplete="off" /></div>
+                    <div class="form-input"><input type="checkbox" checked="checked"  id="login-auto"/><label for="login-auto" id="login-auto-label">下次自动登录</label><a href="domainURL/Account/password" target="__blank" class="forget-password">忘记密码?</a></div>
+                    <div class="form-input"><a class="btn btn-blue" id="login">登陆</a><a class="btn btn-danger" id="register" href="domainURL/Register">注册</a></div>
+                    <div class="form-input"><span class="sns-login-tip">使用其他账户: </span><!--a href="{:U('login?type=qq')}" id="qqlogin">QQ</a--><a href="{:U('login?type=sina')}" class="weibo-login">新浪微博</a></div>
+                </form>
+            </div>
+        </div>
+        <include file="Public:foot" />
+        <script type="text/javascript" src="/style/js/intl_login/v1/xt_login.js?v={$VERSION}"></script>
+    </body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title><if condition="intval(htmlentities($_GET['sub'])) eq 0">全部<else />{$_GET['sub'] |htmlentities|intval|getPubType} </if>&nbsp;-&nbsp;<if condition="intval(htmlentities($_GET['type'])) eq 0">全部<else />{$_GET['type']|htmlentities|intval|getPubType} </if>&nbsp;-&nbsp;校淘</title>
+    <include file="Public:meta-keywords" />
+    <link type="text/css" rel="stylesheet" href="/style/css/common/school-select.css?v={$VERSION}" />
+    <link type="text/css" rel="stylesheet" href="/style/css/intl_search/v1/search_list.css?v={$VERSION}" />
+</head>
+<body>
+    <include file="Public:header-new" />
+    <include file="Public:search-block" />
+    <include file="Public:nav" />
+    <div class="site-main bg-index-site">
+        <div class="site-body">
+            <div class="select-box" id="select-box">
+                 <div class="crumb search-index-crumb"><a href="domainURL">校淘</a> > <a href="domainURL/Search/index?type={$_GET['type']|htmlentities|intval}&sub=0&low=0&high=20000" class="crumb-selected"><if condition="intval(htmlentities($_GET['type'])) eq 0"> 全部 <else />{$_GET['type']|htmlentities|intval| getPubType}</if></a></div>
+                <dl class="select-itm select-itm-type" id="type">
+                    <dt>大类:</dt>
+                    <dd>
+                        <a href="domainURL/Search/index?type=0&sub={$_GET['sub']|htmlentities|intval}&low={$_GET['low']|htmlentities|intval}&high={$_GET['high']|htmlentities|intval}" typeId="0">全部</a>
+                        <volist name="typeData" id="vo">
+                            <a href="domainURL/Search/index?type={$vo['type_id']}&sub={$_GET['sub']|htmlentities|intval}&low={$_GET['low']|htmlentities|intval}&high={$_GET['high']|htmlentities|intval}" typeId="{$vo['type_id']}">{$vo["type"]}</a>
+                        </volist>
+                    </dd>
+                </dl>
+                <dl class="select-itm select-itm-subType" id="subType">
+                    <dt>小类:</dt>
+                    <dd>
+                        <a  href="domainURL/Search/index?type={$_GET['type']|htmlentities|intval}&sub=0&low={$_GET['low']|htmlentities|intval}&high={$_GET['high']|htmlentities|intval}" subTypeId ="0">全部</a>
+                        <volist name="subTypeData" id="vo">
+                            <a href="domainURL/Search/index?type={$_GET['type']|htmlentities|intval}&sub={$vo['type_id']}&low={$_GET['low']|htmlentities|intval}&high={$_GET['high']|htmlentities|intval}" subTypeId="{$vo['type_id']}">{$vo['type']}</a>
+                        </volist>
+                    </dd>
+                </dl>
+                <dl class="select-itm select-itm-price" id="price">
+                    <dt>价格:</dt>
+                    <dd>
+                        <a href="domainURL/Search/index?type={$_GET['type']|htmlentities|intval}&sub={$_GET['sub']|htmlentities|intval}&low=0&high=20000" priceId="0_20000">全部</a>
+                        <volist name="priceListData" id="vo">
+                            <a href="domainURL/Search/index?type={$_GET['type']|htmlentities|intval}&sub={$_GET['sub']|htmlentities|intval}&low={$vo['range'] | preg_replace = '/_/', "&high=", ### }" priceId="{$vo['range']}">{$vo['range']|preg_replace = '/_/', "-", ### }</a>
+                        </volist>
+                    </dd>
+                </dl>
+                 <div class="itm-select-line">
+                    <a href="domainURL/Search/index?type={$_GET['type']|htmlentities|intval}&sub={$_GET['sub']|htmlentities|intval}&low={$_GET['low']|htmlentities|intval}&high={$_GET['high']|htmlentities|intval}&buy=0&order={$_GET['order']|htmlentities|intval}" class="select-label" title="全部">全部</a>
+                    <a href="domainURL/Search/index?type={$_GET['type']|htmlentities|intval}&sub={$_GET['sub']|htmlentities|intval}&low={$_GET['low']|htmlentities|intval}&high={$_GET['high']|htmlentities|intval}&buy=1&order={$_GET['order']|htmlentities|intval}" class="select-label-sell" title="只显示出售的信息">出售</a>
+                    <a href="domainURL/Search/index?type={$_GET['type']|htmlentities|intval}&sub={$_GET['sub']|htmlentities|intval}&low={$_GET['low']|htmlentities|intval}&high={$_GET['high']|htmlentities|intval}&buy=2&order={$_GET['order']|htmlentities|intval}" class="select-label-buy" title="只显示求购信息">求购</a>
+                    <div class="school-only">
+                        <input type='checkbox' <if condition="$_COOKIE['xt_school_only'] eq 1" >checked="true"</if> id="school-only-checkbox"/><label for="school-only-checkbox"><strong title="只浏览中山大学的信息">{$schoolName}</strong></label>
+                    </div>
+                    <a href="domainURL/Search/index?type={$_GET['type']|htmlentities|intval}&sub={$_GET['sub']|htmlentities|intval}&low={$_GET['low']|htmlentities|intval}&high={$_GET['high']|htmlentities|intval}&buy={$_GET['buy']|htmlentities|intval}&order=1" class="itm-order-time" title="时间从新到旧">按时间<i class="icons-sprite"></i></a>
+                    <a href="domainURL/Search/index?type={$_GET['type']|htmlentities|intval}&sub={$_GET['sub']|htmlentities|intval}&low={$_GET['low']|htmlentities|intval}&high={$_GET['high']|htmlentities|intval}&buy={$_GET['buy']|htmlentities|intval}&order=2" class="itm-order-price" title="价格从低到高">按价格<i class="icons-sprite"></i></a>
+                    <a href="domainURL/Search/index?type={$_GET['type']|htmlentities|intval}&sub={$_GET['sub']|htmlentities|intval}&low={$_GET['low']|htmlentities|intval}&high={$_GET['high']|htmlentities|intval}&buy={$_GET['buy']|htmlentities|intval}&order=0" class="itm-order" title="默认排序">默认排序</a>
+                </div>
+            </div>
+
+            <input type="hidden" value="{$_SESSION['areaId']}" id="areaId" />
+            <input type="hidden" value="{$_SESSION['schoolId']}" id="schoolId" />
+
+            <div class="content-search">
+                <div class="content-list">
+                    <div class="content-title"><h3>信息列表</h3></div>
+                    <ul class="itm-list-box">
+                        <volist name="goods" id="vo">
+                            <li class="itm-list">
+                                <a class="itm-picture" href="domainURL/Detail/index/id/{$vo['pub_id']}" target="_blank">
+                                    <img src="imgURL/{$vo['image_data']}" alt="{$vo['title']} | 校淘"/>
+                                </a>
+                                <div class="itm-info">
+                                    <div class="itm-upper-box">
+                                        <a class="itm-title" title="{$vo['title']}" href="domainURL/Detail/index/id/{$vo['pub_id']}" target="_blank"><strong>{$vo["title"]}</strong><span>&nbsp;[{$vo["sum"]}图]&nbsp;<if condition="$vo['by'] eq 1">[商家]<else />[个人]</if></span></a>
+                                        <div class="itm-price"> <strong title="{$vo['price']}"><if condition="is_numeric($vo['price'])">{$vo['price']}元</strong><else />{$vo['price']}</strong></if></div>
+
+                                    </div>
+                                    <div class="itm-content-box">
+                                        {$vo["content"]}
+                                    </div>
+                                    <div class="itm-other-box">
+                                        <a href="domainURL/Account/user/u/{$vo['xiaoplus']}" title="{$vo['saler']}" class="itm-other-info">{$vo['saler']}&nbsp;&nbsp;|</a>
+                                        <span class="itm-other-info">{$vo['school']}&nbsp;&nbsp;|</span>
+                                        <span class="itm-other-info">{$vo["ctime"]|date="m月d日",### }</span>
+                                    </div>
+                                </div>
+                            </li>
+                        </volist>
+
+                        <li id="getMore" class="get-more" index=1 >
+                            <div style="display: none">
+                                <img src='/style/img/common/icon/loading.gif' alt="loading"/>
+                                <span style='vertical-align: top; margin-left: 20px;'>正在加载...</span>
+                            </div>
+                            <span class="more">更多</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="side-bar">
+                    <strong class="side-bar-title">热门推荐</strong>
+                    <ul class="side-bar-list">
+                        <volist name="sider" id="vo">
+                            <li class="side-bar-item">
+                                <a href="domainURL/Detail/index/id/{$vo['pub_id']}">
+                                    <img src="imgURL/{$vo['image_data']}" />
+                                    <strong title="{$vo['title']}">{$vo["title"]}</strong>
+                                </a>
+                            </li>
+                        </volist>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <a href = "javascript:scroll(0,0)" class = "totop"><img src = "/style/img/intl_search/icon/totoparrow.png" class = "totoptar"/></a>
+    <include file="Public:foot" />
+    <script type='text/javascript' src='/style/js/common/school-select.js'></script>
+    <script type="text/javascript">
+        var typeId = "{$_GET['type']|htmlentities|intval}",
+            subTypeId = "{$_GET['sub']|htmlentities|intval}",
+            schoolId = "{$_SESSION['schoolId']}",
+            priceId = "{$_GET['low']|htmlentities|intval}_{$_GET['high']|htmlentities|intval}",
+
+            itmSelect = "{$_GET['buy']|htmlentities|intval}" === "" ? 0 : "{$_GET['buy']|htmlentities|intval}",
+            orderList = "{$_GET['order']|htmlentities|intval}" === "" ? 0 : "{$_GET['order']|htmlentities|intval}";
+
+        //交易类型
+        if (itmSelect === 1) {
+            $(".select-label-sell").addClass("active");
+        } else if (itmSelect === 2){
+            $(".select-label-buy").addClass("active");
+        } else {
+            $(".select-label").addClass("active");
+        }
+
+        //排序
+        if (orderList === 1) {
+            $(".itm-order-time").addClass("active");
+        } else if (orderList === 2){
+
+            $(".itm-order-price").addClass("active");
+        } else {
+            $(".itm-order").addClass("active");
+        }
+    </script>
+    <script type="text/javascript" src="/style/js/intl_search/v1/search_list.js?v={$VERSION}"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+.deal-content h4 {
+	margin: 10px 0;
+}
+.deal-content p {
+	text-align: left;
+	margin-top: 10px;
+}
+
+.deal-content h1 {
+    margin-top: 20px;
+    font-size: 26px;
+    text-align: center;
+}
+
+.deal-close {
+    text-align: center;
+}

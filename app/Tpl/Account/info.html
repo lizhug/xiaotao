@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>个人资料 | 个人中心</title>
+        <include file="Public:meta-keywords" />
+        <link type="text/css" rel="stylesheet" href="/style/css/common/account-global.css?v={$VERSION}" />
+        <link type="text/css" rel="stylesheet" href="/style/css/intl_account/v1/info.css?v={$VERSION}" />
+        <link type="text/css" rel="stylesheet" href="/style/css/common/school-select.css?v={$VERSION}" />
+    </head>
+    <body>
+       <include file="Public:header-new" />
+       <include file="Public:search-block" />
+       <include file="Public:nav_no_focus" />
+       <div class="site-main bg-index-site">
+            <div class="site-body account-content">
+                <div class="user-menu">
+                    <div class="user-info-manager">
+                        <h2>账户管理</h2>
+                        <a href="domainURL/Account/info">个人资料</a>
+                        <a href="domainURL/Account/header">更改头像</a>
+                        <a href="domainURL/Account/changePassword">修改密码</a>
+                    </div>
+                    <div class="user-itm-manager">
+                        <h2>信息管理</h2>
+                        <a href="domainURL/Account/pub">我的发布</a>
+                        <a href="domainURL/Account/store" >我的收藏</a>
+                    </div>
+                </div>
+                <form id="user-detail" class="user-detail" method="post" action="__URL__/infoSave">
+                    <div id="intr">
+                         <h2>基本资料</h2>
+                         <ul class="user-detail-list">
+                             <li><div class="detail-title">校PLUS ID</div><div class="detail-content" style="border:none">{$data['xiaoplus']}</div>
+                             <li><div class="detail-title">用户名</div><input class="detail-content" id="uname" name="uname" value="{$data['uname']}" placeholder="用户名" />
+                             <li><div class="detail-title">所在地</div>
+                                <select class="detail-content" style="width: 85px;" id="province" name="province">
+                                    <volist name="area" id="vo">
+                                        <if condition="$data['province'] eq $vo['area_id']">
+                                           <option value="{$vo['area_id']}" selected='selected'>{$vo["title"]}</option>
+                                       <else />
+                                           <option value="{$vo['area_id']}" >{$vo["title"]}</option>
+                                       </if>
+                                    </volist>
+                                </select>
+                                <select class="detail-content" style="width: 85px;margin-left: 20px;" id="city" name="city">
+                                    <volist name="cityList" id="vo">
+                                        <if condition="$data['city'] eq $vo['area_id']">
+                                           <option value="{$vo['area_id']}" selected='selected'>{$vo["title"]}</option>
+                                        <else />
+                                           <option value="{$vo['area_id']}" >{$vo["title"]}</option>
+                                        </if>
+                                    </volist>
+                                </select>
+                                <select class="detail-content" style="width: 85px;margin-left: 20px;" id="area" name="area">
+                                    <volist name="areaList" id="vo">
+                                        <if condition="$data['area'] eq $vo['area_id']">
+                                           <option value="{$vo['area_id']}" selected='selected'>{$vo["title"]}</option>
+                                        <else />
+                                           <option value="{$vo['area_id']}" >{$vo["title"]}</option>
+                                        </if>
+                                    </volist>
+                                </select>
+                             </li>
+                             <li><div class="detail-title">性别</div>
+                                <select class="detail-content" name="sex" id="sex">
+                                      <if condition="$data['sex'] eq 1">
+                                          <option value="0">男</option> <option value="1" selected="true">女</option>
+                                      <else />
+                                          <option value="0" checked="true">男</option> <option value="1">女</option>
+                                      </if>
+                                </select>
+                              </li>
+                              <li><div class="detail-title">生日</div>
+                                <select name="b-year" class="detail-content" style="width: 90px;" id="b-year">
+                                    <for start="2013" end="1920" comparison="gt" step="-1">
+                                         <if condition="$data['birth'][0] eq $i">
+                                            <option value="{$i}" selected='true'>{$i}</option>
+                                        <else />
+                                           <option value="{$i}">{$i}</option>
+                                        </if>
+                                    </for>
+                                </select>
+                                <select name="b-month" class="detail-content" style="width: 60px; margin-left: 20px;" id="b-month">
+                                    <for start="1" end="13" comparison="lt" step="1">
+                                        <if condition="$data['birth'][1] eq $i">
+                                            <option value="{$i}" selected='true'>{$i}</option>
+                                        <else />
+                                            <option value="{$i}">{$i}</option>
+                                        </if>
+                                    </for>
+                                </select>
+                                <select name="b-day" class="detail-content" style="width: 60px; margin-left: 20px;" id="b-day">
+                                    <for start="1" end="32" comparison="lt" step="1">
+                                        <if condition="$data['birth'][2] eq $i">
+                                            <option value="{$i}" selected='true'>{$i}</option>
+                                        <else />
+                                            <option value="{$i}">{$i}</option>
+                                        </if>
+                                    </for>
+                                </select>
+                             </li>
+                         </ul>
+                    </div>
+                    <div id="contact">
+                        <h2>联系信息</h2>
+                        <ul class="user-detail-list">
+                            <li><div class="detail-title">QQ</div><input class="detail-content" name="qq" value="{$profile['data']['qq']}" id="qq" placeholder="QQ号码" />
+                            <li> <div class="detail-title">绑定邮箱</div>
+                                <if condition="$_SESSION['email'] eq ''" >
+                                    <input class="detail-content account-email"  value="" />
+                                   <span class="add-mail btn btn-warn" id="add-mail">添加绑定邮箱</span>
+                                <else />
+                                    <div class="detail-content account-email" style="border:none;">{$data['email']}</div>         
+                                </if>
+                           </li>
+                        </ul>
+                    </div>                    
+                    <div id="edu">
+                          <h2>教育信息</h2>
+                          <ul class="user-detail-list">
+                              <li><div class="detail-title">大学</div>
+                                  <input  id="college" class="detail-content" value="{$profile['data']['college']|getSchool}">
+                                  <input name="college" id='college-id' type="hidden" value="{$profile['data']['college']}" />
+                              </li>
+                              <li><div class="detail-title" >入学年份</div>
+                                <select class="detail-content" name="year" id="year">
+                                    <for start="2013" end="1949" comparison="gt" step="-1">
+                                         <if condition="$profile['data']['year'] eq $i">
+                                           <option value="{$i}" selected='true'>{$i}</option>
+                                        <else />
+                                           <option value="{$i}">{$i}</option>
+                                        </if>
+                                    </for>
+                                </select>
+                              </li>
+                              <li><div id="user-submit">
+                                    <div class="btn btn-blue" id="save">保存</div>
+                                    <div class="btn btn-danger" id="cancel">取消</div>
+                                 </div>
+                              </li>
+                         </ul>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <include file="Public:foot" />
+        <script type="text/javascript" src="/style/js/common/jquery.form.min.js"></script>
+        <script type='text/javascript' src='/style/js/intl_account/v1/school-select.js' ></script>
+        <script type='text/javascript' src='/style/js/intl_account/v1/info-user-private.js' ></script>
+    </body>
+</html>

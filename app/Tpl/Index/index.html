@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>【校淘】-免费发布信息-本地 免费 高效-{$_SESSION['proId']|getArea}-{$schoolName}</title>
+        <include file="Public:meta-keywords" />
+        <link type="text/css" rel="stylesheet" href="/style/css/common/school-select.css?v={$VERSION}" />
+        <link type="text/css" rel="stylesheet" href="/style/css/intl_home/v1/xt_home.css?v={$VERSION}" />
+    </head>
+    <body>
+        <include file="Public:header-new" />
+        <include file="Public:search-block" />
+        <include file="Public:nav" />
+        <div class="site-main bg-index-site">
+            <div class="site-body">
+                    <div class="side-guide-bar">
+                        <div class="fast-direction"><strong>快速导航</strong></div>
+                        <ul class="guide-lists">
+                            <li class="side-guide-icons">
+                                <h3 class="book-title"><a href="domainURL/Search/index?type=4&sub=0&low=0&high=20000">书籍教材</a></h3>
+                                <a href="domainURL/Search/index?search=教材&type=4&sub=0&low=0&high=20000">教材教辅</a>
+                                <a href="domainURL/Search/index?search=考研&type=4&sub=0&low=0&high=20000">考研</a>
+                                <a href="domainURL/Search/index?search=英语&type=4&sub=0&low=0&high=20000">英语</a>
+                            </li>
+                            <li class="side-guide-icons">
+                                <h3 class="digit-title"><a href="domainURL/Search/index?type=1&sub=0&low=0&high=20000">数码相关</a></h3>
+                                <a href="domainURL/Search/index?search=手机&type=1&sub=0&low=0&high=20000">手机</a>
+                                <a href="domainURL/Search/index?search=平板电脑&type=1&sub=0&low=0&high=20000">平板电脑</a>
+                                <a href="domainURL/Search/index?search=数码配件&type=1&sub=0&low=0&high=20000">数码配件</a>
+                            </li>
+                            <li class="side-guide-icons">
+                                <h3 class="sport-title"><a href="domainURL/Search/index?type=2&sub=0&low=0&high=20000">文体用具</a></h3>
+                                <a href="domainURL/Search/index?search=体育&type=2&sub=0&low=0&high=20000">体育用品</a>
+                                <a href="domainURL/Search/index?search=娱乐&type=2&sub=0&low=0&high=20000">娱乐工具</a>
+                                <a href="domainURL/Search/index?search=文具&type=2&sub=0&low=0&high=20000">文具</a>
+                            </li>
+                            <li class="side-guide-icons">
+                                <h3 class="life-title"><a href="domainURL/Search/index?type=3&sub=0&low=0&high=20000">生活相关</a></h3>
+                                <a href="domainURL/Search/index?search=电器&type=3&sub=0&low=0&high=20000">电器</a>
+                                <a href="domainURL/Search/index?search=日用&type=3&sub=0&low=0&high=20000">日常用品</a>
+                                <a href="domainURL/Search/index?search=生活相关&type=3&sub=0&low=0&high=20000">其他</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="slide">
+                        <div class="banner">
+                            <ul>
+                                <!--li><a href="http://weibo.com/u/3536655650" style="width:520px;height:270px;"><img style="width:520px;height:270px;" src="imgURL/data/activities/2013-9-15/moon-cake-xiaotao-1.png" /></a></li-->
+                                <!--li><a href="http://weibo.com/u/3536655650"><img style="width:520px;height:270px;" src="imgURL/data/activities/2013-11-8/activity.png" alt="京东返利！满39元返利5%" /></a></li-->
+                                <li><a href="domainURL"style="width:520px;height:270px;"><img style="width:520px;height:270px;" alt="校淘微信" src="imgURL/data/activities/2013-9-15/wechat-xiaotao.png" /></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="roll">
+                        <div class="user-status">
+                            <present name="_SESSION['uname']">
+                                <a href="domainURL/Account/info" class="info-center"><img class="status-user-img" src="imgURL/{$_SESSION['user-img']}" alt="用户头像" /><strong>我的校淘</strong></a>    
+                            <else />
+                                <a href="domainURL/Register" class="register">免费注册</a>
+                                <i class="vertical-bar"></i>
+                                <a href="domainURL/Login" class="login">登录</a>
+                            </present>
+                        </div>
+                        <div id="panel">
+                            <ul class="panel-guide">
+                                <li class="panel-guide-1 selected"><span>最新物品</span></li>
+                                <li class="panel-guide-2"><span><!--上升最快-->最新求购</span></li>
+                                <li class="panel-guide-3"><span>0元商品</span></li>
+                            </ul>
+                            <div class="clear"></div>
+                            <div class="panel-bd">
+                                <div class="panel-detail-1">
+                                    <ul class="panel-details">
+                                        <volist name="lastestTen" id="vo">
+                                            <li class="slideList">
+                                                <a class="imgLink" href="domainURL/Detail/index/id/{$vo['pub_id']}"><img src="imgURL/{$vo['image_data']}" alt="{$vo['title']}" /></a>
+                                                <div class="content">
+                                                    <a class="title"href="domainURL/Detail/index/id/{$vo['pub_id']}" title="{$vo['title']}">{$vo['title']}</a> 
+                                                    <span class="time">{$vo['ctime']|date="m月d日", ###}</span>
+                                                    <span class="price"><if condition="is_numeric($vo['price'])">{$vo['price']} 元<else />{$vo['price']}</if></span>
+                                                </div>
+                                             </li>
+                                        </volist>
+                                    </ul>
+                                </div>
+                                <div class="panel-detail-2">
+                                    <ul class="panel-details">
+                                        <volist name="buyTen" id="vo">
+                                            <li class="slideList">
+                                                <a class="imgLink" href="domainURL/Detail/index/id/{$vo['pub_id']}"><img src="imgURL/{$vo['image_data']}" alt="{$vo['title']}" /></a>
+                                                <div class="content">
+                                                    <a class="title"href="domainURL/Detail/index/id/{$vo['pub_id']}">{$vo['title']}</a>
+                                                    <span class="time">{$vo['ctime']|date="m月d日", ###}</span>
+                                                    <span class="price"><if condition="is_numeric($vo['price'])">{$vo['price']} 元<else />{$vo['price']}</if></span>
+                                                </div>
+                                             </li>
+                                        </volist>
+                                    </ul>
+                                </div>
+                                <div class="panel-detail-3">
+                                    <ul class="panel-details">
+                                       <volist name="freeTen" id="vo">
+                                            <li class="slideList">
+                                                <a class="imgLink" href="domainURL/Detail/index/id/{$vo['pub_id']}"><img src="imgURL/{$vo['image_data']}" alt="{$vo['title']}" /></a>
+                                                <div class="content">
+                                                    <a class="title"href="domainURL/Detail/index/id/{$vo['pub_id']}">{$vo['title']}</a>
+                                                    <span class="time">{$vo['ctime']|date="m月d日", ###}</span>
+                                                    <span class="price"><if condition="is_numeric($vo['price'])">{$vo['price']} 元<else />{$vo['price']}</if></span>
+                                                </div>
+                                             </li>
+                                        </volist>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+            </div>
+            <div class="floor-index-wrap">
+                <strong class="floor-index-wrap-title">所有类目</strong>
+                <div class="floor-index-content">
+                    <div class="top-left">
+                        <dl>        
+                            <dt class="life"><a href="domainURL/Search/index?type=4&sub=0&low=0&high=20000">书籍教材</a></dt>
+                            <dd>
+                                <div class = "img-left">
+                                    <img src = "/style/img/intl_home/btn/book.jpg" alt = "校淘书籍教材" />
+                                </div>
+                                <div class = "box-mid">
+                                    <a href = "domainURL/Search/index?search=教材&type=0&sub=0&low=0&high=20000" target = "_blank"><strong>教材</strong></a>
+                                    <a href = "domainURL/Search/index?search=教辅&type=0&sub=0&low=0&high=20000" target = "_blank">教辅</a>
+                                    <a href = "domainURL/Search/index?search=考研&type=0&sub=0&low=0&high=20000" target = "_blank">考研</a>
+                                    <a href = "domainURL/Search/index?search=工具书&type=0&sub=0&low=0&high=20000" target = "_blank">工具书</a>
+                                <br />
+                                    <a href = "domainURL/Search/index?search=外语&type=0&sub=0&low=0&high=20000" target = "_blank"><strong>外语</strong></a>
+                                    <a href = "domainURL/Search/index?search=四六级&type=0&sub=0&low=0&high=20000" target = "_blank">四六级</a>
+                                    <a href = "domainURL/Search/index?search=托福&type=0&sub=0&low=0&high=20000" target = "_blank">托福</a>
+                                    <a href = "domainURL/Search/index?search=日语&type=0&sub=0&low=0&high=20000" target = "_blank">日语</a>
+                                <br />
+                                    <a href = "domainURL/Search/index?search=文学&type=0&sub=0&low=0&high=20000" target = "_blank"><strong>文学</strong></a>
+                                    <a href = "domainURL/Search/index?search=小说&type=0&sub=0&low=0&high=20000" target = "_blank">小说</a>
+                                    <a href = "domainURL/Search/index?search=杂志&type=0&sub=0&low=0&high=20000" target = "_blank">杂志</a>
+                                </div>
+                                <div class = "box-right">
+                                    <a href = "domainURL/Search/index?search=移动&type=0&sub=0&low=0&high=20000" target = "_blank"><strong>移动开发</strong></a>
+                                    <a href = "domainURL/Search/index?search=网页&type=0&sub=0&low=0&high=20000" target = "_blank">网页制作</a>
+                                    <a href = "domainURL/Search/index?search=法律&type=0&sub=0&low=0&high=20000" target = "_blank">法律</a>
+                                <br />
+                                    <a href = "domainURL/Search/index?search=成功&type=0&sub=0&low=0&high=20000" target = "_blank"><strong>成功</strong></a>
+                                    <a href = "domainURL/Search/index?search=励志&type=0&sub=0&low=0&high=20000" target = "_blank">励志</a>
+                                    <a href = "domainURL/Search/index?search=金融&type=0&sub=0&low=0&high=20000" target = "_blank">金融</a>
+                                    <a href = "domainURL/Search/index?search=人际社交&type=0&sub=0&low=0&high=20000" target = "_blank">人际社交</a>
+                                    <a href = "domainURL/Search/index?search=心理学&type=0&sub=0&low=0&high=20000" target = "_blank">心理学</a>
+                                <br />
+                                    <a href = "domainURL/Search/index?search=摄影&type=0&sub=0&low=0&high=20000" target = "_blank"><strong>摄影</strong></a>
+                                    <a href = "domainURL/Search/index?search=设计&type=0&sub=0&low=0&high=20000" target = "_blank">设计</a>
+                                    <a href = "domainURL/Search/index?search=书籍教材&type=0&sub=0&low=0&high=20000" target = "_blank">其他</a>
+                                </div>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="top-right">
+                        <dl>
+                            <dt><a href="domainURL/Search/index?type=3&sub=0&low=0&high=20000">生活相关</a></dt>
+                            <dd>
+                                <div class="img-left">
+                                    <img src = "/style/img/intl_home/btn/life.jpg" alt = "校淘_生活相关" />
+                                </div>
+                                <div class = "box-mid">
+                                    <a href = "domainURL/Search/index?search=洗衣机&type=0&sub=0&low=0&high=20000" target = "_blank"><strong>洗衣机</strong></a>
+                                    <a href = "domainURL/Search/index?search=电水壶&type=0&sub=0&low=0&high=20000" target = "_blank">电水壶</a>
+                                    <a href = "domainURL/Search/index?search=加热棒&type=0&sub=0&low=0&high=20000" target = "_blank">加热棒</a>
+                                    <a href = "domainURL/Search/index?search=电吹风&type=0&sub=0&low=0&high=20000" target = "_blank">电吹风</a>
+                                    <br />
+                                    <a href = "domainURL/Search/index?search=伞&type=0&sub=0&low=0&high=20000" target = "_blank"><strong>伞</strong></a>
+                                    <a href = "domainURL/Search/index?search=电磁炉&type=0&sub=0&low=0&high=20000" target = "_blank">电磁炉</a>
+                                    <a href = "domainURL/Search/index?search=创意物品&type=0&sub=0&low=0&high=20000" target = "_blank">创意物品</a> 
+                                </div>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="bottom-left">
+                        <dl>
+                            <dt><a href="domainURL/Search/index?type=1&sub=0&low=0&high=20000">数码相关</a></dt>
+                            <dd>
+                                <div class = "img-left">
+                                    <img src = "/style/img/intl_home/btn/digit.jpg" alt = "校淘_数码相关" />
+                                </div>
+                                <div class = "box-mid">
+                                    <a href = "domainURL/Search/index?search=手机&type=0&sub=0&low=0&high=20000" target = "_blank"><strong>手机</strong></a>
+                                    <a href = "domainURL/Search/index?search=三星&type=0&sub=0&low=0&high=20000" target = "_blank">三星</a>
+                                    <a href = "domainURL/Search/index?search=小米&type=0&sub=0&low=0&high=20000" target = "_blank">小米</a>
+                                    <a href = "domainURL/Search/index?search=iphone&type=0&sub=0&low=0&high=20000" target = "_blank">iPhone</a>
+                                    <br />
+                                    <a href = "domainURL/Search/index?search=电脑&type=0&sub=0&low=0&high=20000" target = "_blank"><strong>电脑</strong></a>
+                                    <a href = "domainURL/Search/index?search=笔记本&type=0&sub=0&low=0&high=20000" target = "_blank">笔记本</a>
+                                    <a href = "domainURL/Search/index?search=平板&type=0&sub=0&low=0&high=20000" target = "_blank">平板</a>
+                                    <a href = "domainURL/Search/index?search=电脑配件&type=0&sub=0&low=0&high=20000" target = "_blank">电脑配件</a>
+                                    <br />
+                                    <a href = "domainURL/Search/index?search=相机&type=0&sub=0&low=0&high=20000" target = "_blank"><strong>相机</strong></a>
+                                    <a href = "domainURL/Search/index?search=单反&type=0&sub=0&low=0&high=20000" target = "_blank">单反</a>
+                                    <a href = "domainURL/Search/index?search=收音机&type=0&sub=0&low=0&high=20000" target = "_blank">收音机</a>
+                                </div>
+                                <div class = "box-right">
+                                    <a href = "domainURL/Search/index?search=鼠标&type=0&sub=0&low=0&high=20000" target = "_blank"><strong>鼠标</strong></a>
+                                    <a href = "domainURL/Search/index?search=移动硬盘&type=0&sub=0&low=0&high=20000" target = "_blank">移动硬盘</a>
+                                    <a href = "domainURL/Search/index?search=U盘&type=0&sub=0&low=0&high=20000" target = "_blank">U盘</a>
+                                    <a href = "domainURL/Search/index?search=移动电源&type=0&sub=0&low=0&high=20000" target = "_blank">移动电源</a>
+                                    <br />
+                                    <a href = "domainURL/Search/index?search=显示器&type=0&sub=0&low=0&high=20000" target = "_blank"><strong>显示器</strong></a>
+                                    <a href = "domainURL/Search/index?search=无线网卡&type=0&sub=0&low=0&high=20000" target = "_blank">无线网卡</a>
+                                    <a href = "domainURL/Search/index?search=电脑工具&type=0&sub=0&low=0&high=20000" target = "_blank">电脑工具</a>
+                                </div>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="bottom-right">
+                        <dl>
+                            <dt><a href="domainURL/Search/index?type=2&sub=0&low=0&high=20000">文体用具</a></dt>
+                            <dd>
+                                <div class="img-left">
+                                    <img src = "/style/img/intl_home/btn/sport.jpg" alt = "校淘_文体用具" />
+                                </div>
+                                <div class = "box-mid">
+                                    <a href = "domainURL/Search/index?search=体育用具&type=0&sub=0&low=0&high=20000" target = "_blank"><strong>体育用具</strong></a>
+                                    <a href = "domainURL/Search/index?search=篮球&type=0&sub=0&low=0&high=20000" target = "_blank">篮球</a>
+                                    <a href = "domainURL/Search/index?search=足球&type=0&sub=0&low=0&high=20000" target = "_blank">足球</a>
+                                    <a href = "domainURL/Search/index?search=网球&type=0&sub=0&low=0&high=20000" target = "_blank">网球</a>
+                                    <a href = "domainURL/Search/index?search=游泳器材&type=0&sub=0&low=0&high=20000" target = "_blank">游泳器材</a>
+                                <br />
+                                    <a href = "domainURL/Search/index?search=乐器&type=0&sub=0&low=0&high=20000" target = "_blank"><strong>乐器</strong></a>
+                                    <a href = "domainURL/Search/index?search=吉他&type=0&sub=0&low=0&high=20000" target = "_blank">吉他</a>
+                                    <a href = "domainURL/Search/index?search=饰品&type=0&sub=0&low=0&high=20000" target = "_blank">饰品</a>
+                                <br />
+                                    <a href = "domainURL/Search/index?search=计算器&type=0&sub=0&low=0&high=20000" target = "_blank"><strong>计算器</strong></a>
+                                    <a href = "domainURL/Search/index?search=文具&type=0&sub=0&low=0&high=20000" target = "_blank">文具</a>
+                                </div>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+        <include file="Public:foot" />
+        <script type='text/javascript' src='/style/js/common/school-select.js?v={$VERSION}'></script>
+        <script type="text/javascript" src="/style/js/common/unslider.js?v={$VERSION}"></script>
+        <script type="text/javascript" src="/style/js/intl_home/v1/xt_home.js?v={$VERSION}"></script>
+    </body>
+</html>

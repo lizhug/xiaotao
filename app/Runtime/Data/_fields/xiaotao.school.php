@@ -1,0 +1,1 @@
+{"0":"school_id","1":"school","2":"province_id","3":"area_id","4":"sid","5":"alias","_autoinc":true,"_pk":"school_id","_type":{"school_id":"int(11)","school":"varchar(255)","province_id":"int(11)","area_id":"int(11)","sid":"int(11)","alias":"varchar(30)"}}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>我的收藏 | 个人中心</title>
+        <include file="Public:meta-keywords" />
+        <link type="text/css" rel="stylesheet" href="/style/css/common/account-global.css?v={$VERSION}" />
+        <link type="text/css" rel="stylesheet" href="/style/css/intl_account/v1/store.css?v={$VERSION}" />
+    </head>
+    <body>
+       <include file="Public:header-new" />
+        <include file="Public:search-block" />
+        <include file="Public:nav_no_focus" />
+         <div class="site-main bg-index-site">
+            <div class="account-content site-body">
+                <div class="user-menu">
+                    <div class="user-info-manager">
+                        <h2>账户管理</h2>
+                        <a href="domainURL/Account/info">个人资料</a>
+                        <a href="domainURL/Account/header">更改头像</a>
+                        <a href="domainURL/Account/changePassword">修改密码</a>
+                    </div>
+                    <div class="user-itm-manager">
+                        <h2>信息管理</h2>
+                            <a href="domainURL/Account/pub">我的发布</a>
+                            <a href="domainURL/Account/store" >我的收藏</a>
+                    </div>
+                </div>
+                <div id="user-detail" class="user-detail">
+                    <h2>我收藏的信息</h2>
+                    <input id="userID" type="hidden" value={$_SESSION["uid"]} />
+                    <div id="pub">
+                     <div class="pub"><span class="con"><span class="title">标题</span><span class="catalog" href="#">类别</span></span><span class="date">信息日期</span><div class="clear"></div></div>
+                     <volist name="data" id="vo">
+                        <div class="pub"><span class="con"><a class="title" title="{$vo['title']}" href="domainURL/Detail/index/id/{$vo[pub_id]}" target="_blank" >{$vo["title"]}</a><span class="catalog">({$vo["city"]}-{$vo['school']}-{$vo["type"]}-{$vo["sub_type"]})</span></span><span class="date">{$vo["ctime"]}</span><div class="clear"></div></div>
+                     </volist>
+                    </div>
+                     <div id="getMore" index=1 ><div style="display: none"><img src='/style/img/common/icon/loading.gif' /><span style='vertical-align: top; margin-left: 20px;'>正在加载...</span></div>
+                     <span class="more">更多</span></div>
+                </div>
+            </div>
+        </div>
+        <include file="Public:foot" />
+         <script type="text/javascript">
+            $(function(){
+                $("#getMore").bind("click", getMoreFunc);
+
+                function getMoreFunc() {
+
+                    $("#getMore .more").css("display", "none");
+                    $("#getMore div").css("display", "block");
+
+                    $.ajax({
+                        type: "post",
+                        url: "__URL__/getStore",
+                        data: {"p": parseInt($("#getMore").attr('index'), 10), "uid": $("#userID").val() },
+                        success: function(msg){
+                          
+                            var tmp =  parseInt($("#getMore").attr("index"), 10);
+                            $("#getMore").attr("index", ++tmp);
+                           //console.log(msg);
+                            //add
+                            var length =  msg  === null ? 0 : msg.length;
+                            for(var i = 0; i != length; ++i) {
+                                $("<div class='pub'><span class='con'><a class='title' title=" + msg[i].title + "  href='domainURL/Detail/index/id/' target='_blank' >" + msg[i].title+ "</a><span class='catalog'>(" +msg[i].province + "-" + msg[i].school + "-" + msg[i].type + "-" + msg[i].sub_type + ")</span></span><span class='date'>" +msg[i].ctime+ "</span><div class='clear'></div>").appendTo($("#pub"));
+                            }
+                            $("#getMore .more").css("display", "block");
+                            $("#getMore div").css("display", "none");
+
+                            if (length == 0) {
+                                $("#getMore .more").html("没有更多物品啦!");
+                                $("#getMore").unbind("click");
+                            }
+                        },
+                        dataType: "json"
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>

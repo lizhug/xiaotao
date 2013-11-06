@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>上传头像 | 注册</title>
+        <include file="Public:meta-keywords" />
+        <link type="text/css" rel="stylesheet" href="/style/js/common/jquery.imgareaselect-0.9.10/css/imgareaselect-default.css?v={$VERSION}" />
+        <link type="text/css" rel="stylesheet" href="/style/css/intl_register/v1/completeUserImage.css?v={$VERSION}" />
+    </head>
+    <body>
+        <include file="Public:header-new" />
+        <include file="Public:search-block" />
+        <include file="Public:nav_no_focus" />
+        <div class="site-main bg-index-site">
+            <div class="site-body upload-user-head">
+                <h2>上传头像</h2>
+                <form id="completeInfoForm" class="form-role" action="domainURL/Account/uploadHeader" method="post" enctype="multipart/form-data">
+                    <div class="alert alert-error">提示: 仅支持jpg, gif, png, jpeg, bmp类型的图片</div>
+                    <input type="file" id="new-head" name="headerImg" value="上传头像"/>
+                    <div id="loading"><img src="/style/img/common/icon/loading.gif" /><span>正在上传图片...</span></div>
+                    <div class="clear"></div>
+                </form>
+                <img id="user-img" src="" alt="user-img" />
+                <div id="user-img-preview">
+                    <h4>头像预览</h4>
+                    <div><img src="imgURL/{$headInit}" alt="头像预览" style="border: 1px solid  #cccccc;"/></div>
+                </div>     
+                <div class="clear"></div>
+                <div id = "userImageSubmit"><div class = "btn btn-blue">完成，回到首页</div></div>           
+            </div>
+        </div>
+       <include file="Public:foot" />
+       <script type="text/javascript" src="/style/js/common/jquery.form.min.js?v={$VERSION}"></script>
+       <script type="text/javascript" src="/style/js/common/jquery.imgareaselect-0.9.10/scripts/jquery.imgareaselect.min.js?v={$VERSION}"></script>
+       <script type="text/javascript" src='/style/js/intl_register/v1/completeUserImage.js?v={$VERSION}'></script>
+    </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>非法操作</title>
+        <meta name="keywords" content="xiaoplus, xiaotao, 校+, 校淘, 二手, 兼职, 团购, 校园生活平台, 学生, 404" />
+        <meta name="description" content="校淘, 是一个校园生活信息平台, 包括校园二手, 兼职, 团购信息" />
+        <link rel="shortcut icon" type="image/x-icon" href="http://img.alibaba.com/images/eng/wholesale/icon/aliexpress.ico" />
+        <link type="text/css" rel="stylesheet" href="staticURL/style/css/common/public.css" />
+        <link type="text/css" rel="stylesheet" href="staticURL/style/css/common/header/header_all.css" />
+        <link type="text/css" rel="stylesheet" href="staticURL/style/css/common/search/search_one.css" />
+        <link type="text/css" rel="stylesheet" href="staticURL/style/css/common/footer/footer_all.css" />
+        <link type="text/css" rel="stylesheet" href="staticURL/style/css/common/error/error.css" />
+    </head>
+    <body>
+    	<include file="Public:header-active" />
+        <include file="Public:search-block-more" />
+        <div class="main">
+        	<div class="alert alert-info">{$e['message']}
+        		请以管理员身份进行此操作! <a href="domainURL/Index" id="second">3</a>秒钟后跳转
+        	</div>
+        	<img class="img" src="http://t.xiaoplus.com/style/img/common/btn/error_bg.png" />
+        </div>
+        <include file="Public:foot" />    
+        <script type="text/javascript">
+        	setInterval(function() {
+        		$("#second").text(parseInt($("#second").text(), 10) - 1);
+        		if ($("#second").text() == "0") {
+        			window.location.href = "domainURL/Index";
+        		}
+        	}, 1000);
+
+        </script>
+    </body>
+
+</html>
