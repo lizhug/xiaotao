@@ -75,14 +75,13 @@ class GlobalAction extends Action {
                     
                     //获取某个IP地址所在的位置
                     $province = $Ip->getProvince();         //现在精度为省、之后扩展到市
-                    $tbArea = M("area");
-                    $areaIdArray = $tbArea->where("title LIKE `%$tbSchool%` AND pid = 0")->getField("area_id");
-
-                    //省份id
-                    $areaId = $areaIdArray[0];
-
-                    $tbSchool = M("school");
-                    $schoolData = $tbSchool->where("province_id = $areaId")->find();
+		    $tbArea = M("area");
+                    $areaIdArray = $tbArea->where("title LIKE '%$province%' ")->find();
+					
+		   //省份id
+                    $areaId = $areaIdArray['area_id'];
+			                    $tbSchool = M("school");
+                    $schoolData = $tbSchool->where("province_id = $areaId")->order("school_id ASC")->find();
                     $this->schoolId = $schoolData['school_id'];
 
                    $this->initArea($this->schoolId);

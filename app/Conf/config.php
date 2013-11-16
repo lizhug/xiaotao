@@ -16,7 +16,7 @@ return array(
     // 0 (普通模式); 1 (PATHINFO 模式); 2 (REWRITE  模式); 3 (兼容模式)  默认为PATHINFO 模式，提供最好的用户体验和SEO支持
 
     'SHOW_PAGE_TRACE' => false, // 显示页面Trace信息
-    'APP_VERSION' => 20131103,
+    'APP_VERSION' => 20131116,
 
     'DEFAULT_MODULE'  => 'Index', // 默认模块名称
     'DEFAULT_ACTION'  => 'index', // 默认操作名称
