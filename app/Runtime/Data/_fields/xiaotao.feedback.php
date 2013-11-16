@@ -1,1 +1,0 @@
-{"0":"id","1":"uid","2":"email","3":"content","4":"ctime","5":"isdel","6":"isreply","_autoinc":true,"_pk":"id","_type":{"id":"int(11)","uid":"int(11)","email":"varchar(255)","content":"text","ctime":"int(11)","isdel":"tinyint(1)","isreply":"tinyint(1)"}}

@@ -1,1 +1,0 @@
-{"0":"id","1":"description","2":"keywords","3":"uid","4":"ctime","_autoinc":true,"_pk":"id","_type":{"id":"int(11)","description":"text","keywords":"text","uid":"int(11)","ctime":"int(11)"}}

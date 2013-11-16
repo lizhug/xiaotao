@@ -41,8 +41,8 @@ return array(
     
     //腾讯QQ登录配置
     'THINK_SDK_QQ' => array(
-        'APP_KEY'    => '', //应用注册成功后分配的 APP ID
-        'APP_SECRET' => '', //应用注册成功后分配的KEY
+        'APP_KEY'    => '100556406', //应用注册成功后分配的 APP ID
+        'APP_SECRET' => '38edcaf46d60b363ef06af407cb81b87', //应用注册成功后分配的KEY
         'CALLBACK'   => URL_CALLBACK . 'qq',
     ),
     //新浪微博配置

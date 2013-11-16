@@ -31,7 +31,7 @@ $(function() {
             if (!isPwd.test(objVal)){
               notice.css("color", "#f00").html("<img class='unvalid-tip' src='http://t.xiaoplus.com/style/img/common/icon/error.png' />密码不符合规范");
                    return ;
-            } else if ($(this).length < 6) {
+            } else if ($(this).val().length < 6) {
                     notice.css("color", "#f00").html("<img class='unvalid-tip' src='http://t.xiaoplus.com/style/img/common/icon/error.png' />密码少于六位!");
                     return ;
             } else {
@@ -46,7 +46,7 @@ $(function() {
 		if ($(this).val() != $("#password").val()) {
 			notice.css("color", "#f00").html("<img class='unvalid-tip' src='http://t.xiaoplus.com/style/img/common/icon/error.png' />密码不一致!");
 			return ;
-		} else if ($(this).length < 6) {
+		} else if ($(this).val().length < 6) {
                     notice.css("color", "#f00").html("<img class='unvalid-tip' src='http://t.xiaoplus.com/style/img/common/icon/error.png' />密码少于六位!");
                     return ;
                 } else {
