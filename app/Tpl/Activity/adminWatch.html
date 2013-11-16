@@ -1,0 +1,16 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="http://getbootstrap.com/dist/css/bootstrap.min.css">
+	</head>
+	<body>
+		<table class="table table-bordered">
+			<thead><tr><th>商品编号</th><th>商品地址</th><th>商品发布人</th><th>发布人邮箱</th><th>手机号码</th><th>联系地址</th><th>发布时间</th><th>是否取消订单</th><th>是否完成</th><th>是否已经查阅</th></tr></thead>
+			<tbody>
+				<volist name="orderList" id="vo">
+					<tr <if condition="$vo['completed'] eq 1">style="background-color:green"<else /></if><if condition="$vo['isdel'] eq 1">style="text-decoration:line-through;background-color:red;"<else /></if>    ><td>{$vo['id']}</td><td><a href="{$vo['url']}">{$vo['url']}</a></td><td>{$vo['uname']}</td><td>{$vo['email']}</td><td>{$vo['phone']}</td><td>{$vo['addr']}</td><td>{$vo['ctime']|date="Y-m-d h:i", ###}</td><td><if condition="$vo['isdel']">已取消订单<else />否</if></td><td><if condition="$vo['completed'] eq 1">已完成<else />未完成</if></td><td><if condition="$vo['watched'] eq 1">已查阅<else />等待查阅</if></td></tr>
+
+				</volist>
+			</tbody>
+		</table>
+	</body>
+</html>

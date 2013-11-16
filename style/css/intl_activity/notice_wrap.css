@@ -1,0 +1,39 @@
+.notice-wrap {
+	width: 100%;
+	height: 100%;	
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: rgba(0, 0, 0, 0.5);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#50000000,endColorstr=#50000000);
+	z-index: 2;
+}
+
+.notice-wrap .notice-box {
+	width: 500px;
+	height: 400px;
+	background: #fff;
+	margin: 150px auto;
+	border: 1px solid #ddd;
+}
+
+.notice-box .notice-box-title {
+	height: 20px;
+	position: relative;
+	padding: 15px 10px;
+	background: #DC062E;
+	color: #FBE57A;
+	box-shadow: 0 1px 3px #ccc;
+	font: bold 20px/20px Arial, "Microsoft yahei", sans-serif;
+}
+
+.notice-box-close {
+	position: absolute;
+	right: 20px;
+	cursor: pointer;
+}
+
+.notice-box-close:hover {
+	opacity: 0.5;
+	filter: alpha(opacity=50);
+}
