@@ -1,1 +1,0 @@
-{"0":"id","1":"uid","2":"data","_autoinc":true,"_pk":"id","_type":{"id":"int(11)","uid":"int(11)","data":"text"}}

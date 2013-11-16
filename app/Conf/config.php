@@ -62,13 +62,17 @@ return array(
         'Detail:index'            => array('{id}', 0)               //Detail目录的静态文件缓存
     ),
 
-    "DEFAULT_USER_HEADER" => "data/user/default_head.png",                 //用户默认头像地址
+    "DEFAULT_USER_HEADER" => "style/img/common/icon/default_head.png",                 //用户默认头像地址
+    "DEFAULT_ITEM_BG" => "style/img/common/btn/default.png",                 //用户默认头像地址
     "COOKIE_DOMAIN" => ".xiaoplus.com",         //cookie域名
     
+    //邮件相关
     "EMAIL_ADDR" => "smtp.exmail.qq.com",
     "EMAIL_USER" => "no-reply@xiaoplus.com",
     "EMAIL_PWD" => "NoReply2013",
-    "FROM_NAME" => "校PLUS 团队"
+    "FROM_NAME" => "校PLUS 团队",
+
+
 
 )
 ?>

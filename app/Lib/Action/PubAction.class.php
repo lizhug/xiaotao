@@ -94,7 +94,7 @@ class PubAction extends GlobalAction {
         $_POST["image_data"] = json_encode($_POST["image_data"]);
 
         if ($_POST["image_data"] == "null"){
-            $_POST["image_data"] = json_encode(array("data/uploads/default.png"));
+            $_POST["image_data"] = json_encode(array(C("DEFAULT_ITEM_BG")));
         }
 
         $tbPubVerify = D("pub");
