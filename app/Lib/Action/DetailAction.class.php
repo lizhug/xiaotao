@@ -18,7 +18,10 @@ class DetailAction extends GlobalAction {
         //获取物品信息
         $pubData = $tbPub->where("pub_id = $id AND isdel = 0")->find();
         $uid = $pubData['uid'];
-        
+        //把手机号码生成图片
+        $pubData['phone'] = $this->stringToImage($pubData['phone']);
+        $pubData['phone'] = base64_encode($pubData['phone']);
+
         //获取该物品的用户信息
         $tbUser = M("user");
         $userData = $tbUser->where("uid = $uid")->find();
@@ -43,7 +46,19 @@ class DetailAction extends GlobalAction {
         }
         $this->display();
     }
-    
+
+    //把文本转换为图片
+    private function stringToImage($string){
+        ob_start();
+        import('ORG.Util.ThinkImage');          //引入图片处理库
+        $img = new ThinkImage(THINKIMAGE_GD, "style\img\intl_detail\btn\phone.png");
+        $img->text($string, "data/huawen.ttf", 18, '#FF0000', THINKIMAGE_WATER_CENTER);
+        $img->save('');
+        $content = ob_get_contents();
+        ob_end_clean();
+        return $content;
+    }
+
     //记录访问该detail的用户
     public function pub_glance_logs() {
         $uid = session("uid") ? session('uid') : 0;
