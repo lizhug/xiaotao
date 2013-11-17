@@ -19,13 +19,13 @@ class SinaIpLocation {
 
 		//新浪API地址
 		$curl = curl_init();
-		curl_setopt($curl, CURLOPT_URL, $this->domain);
+		//获得用户ip
+		$this->ip = $this->get_onlineip();
+
+		curl_setopt($curl, CURLOPT_URL, $this->domain."&ip=".$this->ip);
 		curl_setopt( $curl, CURLOPT_RETURNTRANSFER, 1 );
 		$this->data = $this->getStringArray(curl_exec($curl));					//返回的数据
 		curl_close($curl);
-
-		//获得用户ip
-		$this->ip = $this->get_onlineip();
 	}
 
 	//由于返回的是一个字符串、所以截取等号之后的字符

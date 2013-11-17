@@ -16,7 +16,7 @@ return array(
     // 0 (普通模式); 1 (PATHINFO 模式); 2 (REWRITE  模式); 3 (兼容模式)  默认为PATHINFO 模式，提供最好的用户体验和SEO支持
 
     'SHOW_PAGE_TRACE' => false, // 显示页面Trace信息
-    'APP_VERSION' => 20131103,
+    'APP_VERSION' => 20131116,
 
     'DEFAULT_MODULE'  => 'Index', // 默认模块名称
     'DEFAULT_ACTION'  => 'index', // 默认操作名称
@@ -62,13 +62,17 @@ return array(
         'Detail:index'            => array('{id}', 0)               //Detail目录的静态文件缓存
     ),
 
-    "DEFAULT_USER_HEADER" => "data/user/default_head.png",                 //用户默认头像地址
+    "DEFAULT_USER_HEADER" => "style/img/common/icon/default_head.png",                 //用户默认头像地址
+    "DEFAULT_ITEM_BG" => "style/img/common/btn/default.png",                 //用户默认头像地址
     "COOKIE_DOMAIN" => ".xiaoplus.com",         //cookie域名
     
+    //邮件相关
     "EMAIL_ADDR" => "smtp.exmail.qq.com",
     "EMAIL_USER" => "no-reply@xiaoplus.com",
     "EMAIL_PWD" => "NoReply2013",
-    "FROM_NAME" => "校PLUS 团队"
+    "FROM_NAME" => "校PLUS 团队",
+
+
 
 )
 ?>
