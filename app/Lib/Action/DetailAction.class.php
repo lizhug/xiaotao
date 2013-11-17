@@ -51,7 +51,7 @@ class DetailAction extends GlobalAction {
     private function stringToImage($string){
         ob_start();
         import('ORG.Util.ThinkImage');          //引入图片处理库
-        $img = new ThinkImage(THINKIMAGE_GD, "style\img\intl_detail\btn\phone.png");
+        $img = new ThinkImage(THINKIMAGE_GD, "static\img\intl_detail\btn\phone.png");
         $img->text($string, "static/font/huawen.ttf", 18, '#FF0000', THINKIMAGE_WATER_CENTER);
         $img->save('');
         $content = ob_get_contents();
