@@ -775,9 +775,9 @@ img {
 
 
 /*面包屑*/
-.crumb {
+.crumb a{
   height: 25px;
-  color: #1A9AA3;
+  color: #00BBBB;
   margin-top: 25px;
   padding-left: 5px;
   font-size: 12px;
