@@ -26,8 +26,8 @@ class DetailAction extends GlobalAction {
 	$tbPub->where("pub_id = '$id' AND isdel = 0")->setInc("scan");              //自增       
 
 	 //把手机号码生成图片
-         $pubData['phone'] = $this->stringToImage($pubData['phone']);
-         $pubData['phone'] = base64_encode($pubData['phone']); 
+         //$pubData['phone'] = $this->stringToImage($pubData['phone']);
+         //$pubData['phone'] = base64_encode($pubData['phone']); 
 
         //获取该物品的用户信息
         $tbUser = M("user");

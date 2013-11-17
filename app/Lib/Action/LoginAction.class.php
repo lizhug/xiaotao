@@ -262,7 +262,7 @@ class LoginAction extends GlobalAction {
 		//$this->addUserInfo();
 		//$this->redirect("Index/index");
 		
-                //$this->redirect("addInfo");
+                $this->redirect("addInfo");
             }
         }
     }
