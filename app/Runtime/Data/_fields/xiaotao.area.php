@@ -1,1 +1,0 @@
-{"0":"area_id","1":"title","2":"pid","_autoinc":true,"_pk":"area_id","_type":{"area_id":"int(11)","title":"varchar(255)","pid":"int(11)"}}

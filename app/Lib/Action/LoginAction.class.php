@@ -129,8 +129,9 @@ class LoginAction extends GlobalAction {
             session("uname", $user_info['nick']);                                 //用户名
             session("uid", $uid);
             session("user-img", $headImg);
+	    session("email", $email);
             session("weibo_access_token", $token["access_token"]);
-            session("admin_level", $isFit["admin_level"]);
+            session("admin_level", 0);
             session("wb_token", null);
             session("wb_user_info", null);
             $lifetime = 24 * 3600 * 7;
@@ -248,28 +249,20 @@ class LoginAction extends GlobalAction {
 	
                 $uid = $tbUser->where("uid = $uid")->save($tmpData);
 
-                session("xiaoplus", $xiaoplus);                        //xiaoplus账号
-
-                session("uname", $userInfo["uname"]);                                 //用户名
-
-                session("uid", $userInfo["uid"]);
-
-                session("user-img", $headImg);
+		$this->setUserSession($userInfo, true);
 
                 session("weibo_access_token", $token["access_token"]);
-				
-	        session("admin_level", $isFit["admin_level"]);
-               
-                $lifetime = 24 * 3600 * 7;
-
-                setcookie(session_name(), session_id(), time() + $lifetime, "/",  C("COOKIE_DOMAIN"));
-
+              
                 $this->redirect("Index/index");
             } else {
                 //新用户需要重新定向
                 session("wb_token", $token);
                 session("wb_user_info", $user_info);
-                $this->redirect("addInfo");
+
+		//$this->addUserInfo();
+		//$this->redirect("Index/index");
+		
+                //$this->redirect("addInfo");
             }
         }
     }

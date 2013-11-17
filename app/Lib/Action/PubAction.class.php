@@ -76,9 +76,11 @@ class PubAction extends GlobalAction {
             $this->error($upload->getErrorMsg());               //捕获上传异常
         } else {
             $uploadList = $upload->getUploadFileInfo();                 //取得成功上传的文件信息
-            import("ORG.Util.Image");   
-            //给m_缩略图添加水印, Image::water('原文件名','水印图片地址')   
-            //Image::water($uploadList[0]['savepath'].$uploadList[0]['savename'], 'data/uploads/water.png'); 
+            $imgPath = $uploadList[0]['savepath'].$uploadList[0]['savename'];
+            import('ORG.Util.ThinkImage');          //引入图片处理库
+            $img = new ThinkImage(THINKIMAGE_GD, $imgPath);
+            $img->water("style/img/common/icon/water.png", THINKIMAGE_WATER_SOUTHEAST);
+            $img->save($uploadList[0]['savepath'].$uploadList[0]['savename']);
         }
         $this->ajaxReturn($uploadList[0]);
     }
@@ -94,7 +96,7 @@ class PubAction extends GlobalAction {
         $_POST["image_data"] = json_encode($_POST["image_data"]);
 
         if ($_POST["image_data"] == "null"){
-            $_POST["image_data"] = json_encode(array("data/uploads/default.png"));
+            $_POST["image_data"] = json_encode(array(C("DEFAULT_ITEM_BG")));
         }
 
         $tbPubVerify = D("pub");

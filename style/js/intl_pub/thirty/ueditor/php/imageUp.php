@@ -14,7 +14,7 @@
 
     //上传配置
     $config = array(
-        "savePath" => "../../../../../../data/thumb",
+        "savePath" => "../../../../../../data/thumb/",
         "maxSize" => 4000, //单位KB
         "allowFiles" => array(".gif", ".png", ".jpg", ".jpeg", ".bmp")
     );

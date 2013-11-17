@@ -15,8 +15,7 @@ class GlobalAction extends Action {
             $this->sessionStart();
             $this->setSchoolCookie();
             $this->initSchool();
-	   $this->assign("VERSION", C("APP_VERSION"));
-	   
+	        $this->assign("VERSION", C("APP_VERSION"));
 	}
         
         public function initSchool() {
@@ -69,9 +68,23 @@ class GlobalAction extends Action {
                     $this->ajaxReturn($_COOKIE["xp_area"]);
             } else {
                 if (!isset($_COOKIE['xp_area'])) {
-                   $this->schoolId = 100;                   //什么都没有的话默认中大
+                    //什么都没有的话根据省份选择对应学校的第一个学校
+
+                    import('ORG.Net.SinaIpLocation');//导入IpLocation类
+                    $Ip = new SinaIpLocation(); //实例化类 参数表示IP地址库文件
+                    
+                    //获取某个IP地址所在的位置
+                    $province = $Ip->getProvince();         //现在精度为省、之后扩展到市
+		    $tbArea = M("area");
+                    $areaIdArray = $tbArea->where("title LIKE '%$province%' AND pid = 0")->find();
+					
+		   //省份id
+                    $areaId = $areaIdArray['area_id'];
+			                    $tbSchool = M("school");
+                    $schoolData = $tbSchool->where("province_id = $areaId")->order("school_id ASC")->find();
+                    $this->schoolId = $schoolData['school_id'];
+
                    $this->initArea($this->schoolId);
-                   
                    $cookieStr = array(
                         "schoolId"=>$this->schoolId, 
                         "schoolName"=>$this->schoolName,

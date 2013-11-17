@@ -13,12 +13,18 @@ class DetailAction extends GlobalAction {
         $this->pub_glance_logs();
         
         $tbPub = M("pub");
-        $tbPub->where("pub_id = '$id' AND isdel = 0")->setInc("scan");              //自增
+        
 		
         //获取物品信息
         $pubData = $tbPub->where("pub_id = $id AND isdel = 0")->find();
+	if (!$pubData) {
+		 $this->display("Public:pageNotFound");       //404
+	                return;
+	}
+
         $uid = $pubData['uid'];
-        
+	$tbPub->where("pub_id = '$id' AND isdel = 0")->setInc("scan");              //自增        
+
         //获取该物品的用户信息
         $tbUser = M("user");
         $userData = $tbUser->where("uid = $uid")->find();
