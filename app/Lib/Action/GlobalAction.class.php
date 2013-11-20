@@ -75,6 +75,7 @@ class GlobalAction extends Action {
                     
                     //获取某个IP地址所在的位置
                     $province = $Ip->getProvince();         //现在精度为省、之后扩展到市
+
 		    $tbArea = M("area");
                     $areaIdArray = $tbArea->where("title LIKE '%$province%' AND pid = 0")->find();
 					
