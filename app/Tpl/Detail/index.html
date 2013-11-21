@@ -50,7 +50,7 @@
                                 <ul class="detial-item-list">
                                     <li><span class="label">价格</span><div class="itm-price" title="{$data['price']}"><if condition="is_numeric($data['price']) ">{$data['price']}</div>元<else />{$data['price']}</div></if></li>
                                     <li><span class="label"><if condition="$data['isbuy'] eq 1">买家<else />卖家</if></span><a class="itm-sale" href="/Account/user/u/{$userData['xiaoplus']}" title="{$data['saler']}">{$data['saler']}</a><span class="itm-by-type">&nbsp;<if condition="$data['by'] eq 1">(商家)<else />(个人)</if></span></li>
-				   <li><span class="label">电话/QQ</span><div class="itm-phone"><img src="data:image/png;base64,{$data['phone']}" alt="user-phone" /></div></li>                                   
+				   <li><span class="label">电话/QQ</span><div class="itm-phone">{$data['phone']}<!--img src="data:image/png;base64,{$data['phone']}" alt="user-phone" /--></div></li>                                
                                     <li><span class="label">交易地点</span><div class="itm-place">{$data["school"] | getSchool}</div></li>
                                 </ul>
                             </div>  
