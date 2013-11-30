@@ -6,7 +6,7 @@ define('URL_CALLBACK', 'http://t.xiaoplus.com/Login/callback/type/');
 return array(
     'DB_TYPE'               => 'mysql',     // 数据库类型
     'DB_HOST'               => 'localhost', // 服务器地址  xiaotao.db.11241604.hostedresource.com
-    'DB_NAME'               => 'xiaotao',          // 数据库名
+    'DB_NAME'               => 'xiaotao-develop',          // 数据库名
     'DB_USER'               => 'xiaotao',      // 用户名
     'DB_PWD'                => 'Xiaotao2013',          // 密码
     'DB_PORT'               => '3306',        // 端口
@@ -22,9 +22,9 @@ return array(
     'DEFAULT_ACTION'  => 'index', // 默认操作名称
     'TMPL_PARSE_STRING' => array(
       //  '__PUBLIC__' => './Common'     // 更改默认的__PUBLIC__替换规则
-	  "imgURL" => "http://t.xiaoplus.com",        //用户上传的图片地址
-	  "staticURL" => "http://t.xiaoplus.com",      //静态文件地址
-	  "domainURL" => "http://t.xiaoplus.com"       //网站域名
+	  "imgURL" => "http://t.xiaoplus.com:8080",        //用户上传的图片地址
+	  "staticURL" => "http://t.xiaoplus.com:8080",      //静态文件地址
+	  "domainURL" => "http://t.xiaoplus.com:8080"       //网站域名
 	  
     ),
 	//'ERROR_MESSAGE'         => '您浏览的页面暂时发生了错误！请稍后再试～', //错误显示信息,非调试模式有效

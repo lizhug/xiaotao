@@ -83,7 +83,7 @@ class GlobalAction extends Action {
                     $areaId = $areaIdArray['area_id'];
 			                    $tbSchool = M("school");
                     $schoolData = $tbSchool->where("province_id = $areaId")->order("school_id ASC")->find();
-                    $this->schoolId = $schoolData['school_id'];
+                    $this->schoolId = $schoolData['school_id'] == null ? 100 :  $schoolData['school_id'] ;
 
                    $this->initArea($this->schoolId);
                    $cookieStr = array(
@@ -100,7 +100,7 @@ class GlobalAction extends Action {
                    session("proId", $this->proId);
                 } else {
 		 	$cookieData = json_decode($_COOKIE['xp_area'], true);
-			$this->schoolId = $cookieData['schoolId'];
+			$this->schoolId = $cookieData['schoolId'] == null ?  100 :  $cookieData['schoolId'];
 			$this->initArea($this->schoolId);
 			$this->schoolName = $cookieData['schoolName'];
 			session("schoolId", $this->schoolId);
