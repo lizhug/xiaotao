@@ -136,6 +136,7 @@
     $(".big-img img").bind("click", function() {
         $(".img-area img").attr("src", $(".big-img img").attr("src"));
         $(".huge-img").toggle("normal");
+        $(".huge-img").focus();
     })
 
     $(".img-container img").bind("click", function() {
