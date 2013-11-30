@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+	<head>
+		<title>京东返利满39返利5%！校淘带来大惊喜！</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link rel="stylesheet" type="text/css" href="http://t.xiaoplus.com/style/css/common/public.css?v={$VERSION}">
+        <link rel="stylesheet" type="text/css" href="http://t.xiaoplus.com/style/css/intl_activity/jdrebate.css?v={$VERSION}">
+		<link rel="stylesheet" type="text/css" href="http://t.xiaoplus.com/style/css/intl_activity/notice_wrap.css?v={$VERSION}">
+		<script type="text/javascript">
+			var URL = "__URL__",
+			    APP = "__APP__";
+		</script>
+    </head>
+    <body>
+		<div class="site-header-wrap">
+			<div class="site-header-content">
+				<img src="http://t.xiaoplus.com/style/img/intl_activity/header_banner_3.png" alt="京东返利, 满39元返5%！" />
+				<img class="activity-rule-image" src="http://t.xiaoplus.com/style/img/intl_activity/rule_intr_2.png" alt="返利规则" />
+				<img class="qa-image" src="http://t.xiaoplus.com/style/img/intl_activity/qa_1.png" alt="Q&A" />
+			</div>
+		</div>
+		<div class="go-jd"><a href="http://www.jd.com/" target="__blank">前往京东主页</a></div>
+		<div class="action-box">
+			<ul class="user-info-wrap">
+            <present name="_SESSION['uname']">
+                <li class="my-account-menu">
+                    <a href="domainURL/Account/info"><img class="header-user-img" src="imgURL/{$_SESSION['user-img']}" alt="{$_SESSION['uname']}" title="{$_SESSION['uname']}"/></a>
+                    <a href="domainURL/Account/info" class="user-uname">{$_SESSION["uname"]}</a>
+                    <a href="javascript:void(0);" class="my-already-buy" id="my-already-buy">我的订购列表</a>
+                </li>
+            <else />
+                <li class="account-login-register">
+                    <a href="javascript:void(0);" id="header-active-login" class="header-login-btn login-btn">快速登陆</a>
+                    <a href="javascript:void(0);" id="header-active-register" class="header-active-register register-btn">免费注册</a></li>
+                </li>
+            </present>
+        	</ul>
+			<div class="buy-car" id="buy-car">购物车 | 提交物品地址</div>
+		</div>
+		<script type="text/javascript" src="staticURL/style/js/common/require-2.1.9.min.js"></script>
+		<script type="text/javascript">
+			require.config({
+				baseUrl: "http://t.xiaoplus.com/style/js",
+				paths: {
+					"jquery": "common/jquery-1.8.2.min"
+				}
+			});
+
+			require(["intl_activity/jdrebate"], function(main) {
+				main.initialize();
+			});
+		</script>
+		<!-- Baidu Button BEGIN -->
+		<script type="text/javascript" id="bdshare_js" data="type=slide&amp;img=1&amp;pos=right&amp;uid=6723403" ></script>
+		<script type="text/javascript" id="bdshell_js"></script>
+		<script type="text/javascript">
+		document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000);
+		</script>
+		<!-- Baidu Button END -->
+
+		<!--ga 代码段-->
+		<script type="text/javascript">	var _gaq = _gaq || [];
+			var pluginUrl = '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+			
+			_gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+			_gaq.push(['_setAccount', 'UA-43069935-1']);
+			_gaq.push(['_setDomainName', '.xiaoplus.com']);
+			_gaq.push(['_trackPageview']);
+
+			(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
+
+		</script><!--百度统计代码段-->
+		<script type="text/javascript">
+			var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+
+			document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F18375cebd45a156f1af4e908293651ad' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</body>
+</html>

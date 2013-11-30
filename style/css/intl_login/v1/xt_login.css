@@ -1,0 +1,162 @@
+/******************************************容器****************************************************/
+
+#main {
+    display: block;
+    text-align: center;
+}
+
+/**************************************Form image*****************************************************/
+.form-image{
+    width: 600px;
+    float: left;
+    height: 500px;
+    background: url(http://t.xiaoplus.com/style/img/intl_login/btn/login_bg.png) 0 0 no-repeat;
+}
+
+/**************************************Form Login***********************************************/
+
+.form-login {
+    float: left;
+    width: 325px;
+    margin-top: 20px;
+    padding: 0px 5px 20px;
+    border: 1px solid #CBE0E3;
+    background: #fff;
+    -webkit-box-shadow: 0 0 0 1px #FFF,0 0 0 2px #dfdfdf,0 0 5px 3px #f0f0f0;
+    -moz-box-shadow: 0 0 0 1px #FFF,0 0 0 2px #dfdfdf,0 0 5px 3px #f0f0f0;
+    box-shadow: 0 0 0 1px #FFF,0 0 0 2px #dfdfdf,0 0 5px 3px #f0f0f0;
+}
+
+#tip {
+    display: block;
+    width: 185px;
+    height: 20px;
+    margin: 20px 0 10px 92px;
+    text-align: left;
+    color: red;
+}
+
+.form-login .con {
+    display: block;
+    float: left;
+    width: 90px;
+    height: 26px;
+    padding-top: 7px;
+    text-align: center;
+}
+
+#user,
+#password{
+    width: 200px;
+    height: 35px;
+    display: block;
+    border: 1px solid #cccccc;;
+    float: left;
+    padding-left: 5px;
+    outline: none;
+    color: gray;
+    margin: 0 0 18px 0;
+    box-shadow: inset 0px 1px 5px #cccccc;
+    line-height: 36px\9;
+}
+#user:focus,
+#password:focus {
+    box-shadow: 0px 0px 5px #25B9C5;
+    border: 1px solid #25B9C5;
+}
+
+#login-auto{
+    display: block;
+    float: left;
+    width: 20px;
+    height: 20px;
+    margin-left: 90px;
+    margin-top: 15px;
+}
+.forget-password {
+    display: block;
+    float: left;
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+.forget-password:visited {
+    color: #0bb;
+}
+.forget-password:hover {
+    text-decoration: underline;
+}
+
+#login-auto-label {
+    display: block;
+    float: left;
+    width: 90px;
+    height: 26px;
+    padding-top: 7px;
+    margin: 8px 0 0 5px;;
+    font-size: 14px;
+    margin-right: 20px;
+    +line-height: 20px;
+    line-height: 20px\0;
+    _line-height: 20px;
+}
+
+#register {
+    margin: 20px 0 0 40px;
+}
+#login {
+    margin: 20px 0 0 92px;
+}
+
+.sns-login-tip {
+    display: block;
+    float: left;
+    margin-top: 30px;
+    font-size: 14px;
+    width: 100px;
+    margin-left: 37px;
+    height: 26px;
+}
+.form-input:after {
+    display: block;
+    content: " ";
+    visibility: visible;
+    height: 0px;
+    clear: both;
+}
+
+.weibo-login {
+    display: block;
+    float: left;
+    width: 0px;
+    margin: 30px 0 0 10px;
+    vertical-align: middle;
+    color: #444444;
+    padding-left: 20px;
+    font-size: 14px;
+    height: 16px;
+    background: url(http://t.xiaoplus.com/style/img/intl_login/icon/login_sns_btn.gif) 0 -32px no-repeat;
+}
+.weibo-login:hover {
+    background: url(http://t.xiaoplus.com/style/img/intl_login/icon/login_sns_btn.gif) 0 -48px no-repeat;
+    text-decoration: underline;
+    color: #0bb;
+}
+
+.qq-login {
+    display: block;
+    float: left;
+    width: 0px;
+    margin: 30px 0 0 10px;
+    vertical-align: middle;
+    color: #444444;
+    padding-left: 20px;
+    font-size: 14px;
+    height: 16px;
+    background: url(http://t.xiaoplus.com/style/img/intl_login/icon/login_sns_btn.gif) 0 0px no-repeat;
+}
+.qq-login:hover {
+    background: url(http://t.xiaoplus.com/style/img/intl_login/icon/login_sns_btn.gif) 0 -16px no-repeat;
+    text-decoration: underline;
+    color: #0bb;
+}

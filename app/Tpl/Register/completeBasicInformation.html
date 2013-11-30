@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>完善个人资料 | 注册</title>
+        <include file="Public:meta-keywords" />
+        <link type="text/css" rel="stylesheet" href="/style/css/common/school-select.css?v={$VERSION}" />
+        <link type="text/css" rel="stylesheet" href="/style/css/intl_register/v1/completeBasicInformation.css?v={$VERSION}" />
+    </head>
+    <body>
+        <include file="Public:header-new" />
+        <include file="Public:search-block" />
+        <include file="Public:nav_no_focus" />
+        <div class="site-main bg-index-site">
+            <div class="site-body">
+                <form id="completeInfoForm" class="form-role" method="post" action="__URL__/basicInfoSave">
+                    <h2>完善基本资料</h2>
+                    <ul class="form-list">
+                        <li><div class="form-section-title">所在地</div>
+                            <select class="form-section-content" style="width: 85px;" id="province" name="province">
+                                <option  selected = "selected">选择省份</option>
+                                    <volist name="area" id="vo">
+                                        <if condition="$data['province'] eq $vo['area_id']">
+                                           <option value="{$vo['area_id']}" selected='selected'>{$vo["title"]}</option>
+                                        <else />
+                                           <option value="{$vo['area_id']}" >{$vo["title"]}</option>
+                                        </if>
+                                    </volist>
+                            </select>
+                            <select class="form-section-content" style="width: 85px;margin-left: 20px;" id="city" name="city">
+                                <volist name="cityList" id="vo">
+                                    <if condition="$data['city'] eq $vo['area_id']">
+                                          <option value="{$vo['area_id']}" selected='selected'>{$vo["title"]}</option>
+                                    <else />
+                                         <option value="{$vo['area_id']}" >{$vo["title"]}</option>
+                                     </if>
+                                </volist>
+                            </select>
+                            <select class="form-section-content" style="width: 85px;margin-left: 20px;" id="area" name="area">
+                                <volist name="areaList" id="vo">
+                                    <if condition="$data['area'] eq $vo['area_id']">
+                                          <option value="{$vo['area_id']}" selected='selected'>{$vo["title"]}</option>
+                                       <else />
+                                          <option value="{$vo['area_id']}" >{$vo["title"]}</option>
+                                       </if>
+                                </volist>
+                            </select>
+                        </li>
+                        <li><div class="form-section-title">性别</div>
+                            <select class="form-section-content" name="sex" id="sex">
+                                <if condition="$data['sex'] eq 1">
+                                    <option value="0">男</option> <option value="1" selected="true">女</option>
+                                <else />
+                                    <option value="0" checked="true">男</option> <option value="1">女</option>
+                                </if>
+                            </select></li>
+                        <li><div class="form-section-title">生日</div>
+                            <select name="b-year" class="form-section-content" style="width: 90px;" id="b-year">
+                                <for start="2013" end="1920" comparison="gt" step="-1">
+                                    <if condition="$data['birth'][0] eq $i">
+                                        <option value="{$i}" selected='true'>{$i}</option>
+                                    <else />
+                                       <option value="{$i}">{$i}</option>
+                                    </if>
+                                </for>
+                            </select>
+                            <select name="b-month" class="form-section-content" style="width: 60px; margin-left: 20px;" id="b-month">
+                                <for start="1" end="13" comparison="lt" step="1">
+                                    <if condition="$data['birth'][1] eq $i">
+                                        <option value="{$i}" selected='true'>{$i}</option>
+                                    <else />
+                                        <option value="{$i}">{$i}</option>
+                                    </if>
+                                </for>
+                            </select>
+                            <select name="b-day" class="form-section-content" style="width: 60px; margin-left: 20px;" id="b-day">
+                                <for start="1" end="32" comparison="lt" step="1">
+                                    <if condition="$data['birth'][2] eq $i">
+                                        <option value="{$i}" selected='true'>{$i}</option>
+                                    <else />
+                                        <option value="{$i}">{$i}</option>
+                                    </if>
+                                </for>
+                            </select></li>
+                        <li><div class="form-section-title">大学</div>
+                            <input  id="college" class="form-section-content" value="{$profile['data']['college']|getSchool}">
+                            <input name="college" id='college-id' type="hidden" value="{$profile['data']['college']}" /></li>
+                        <li><div class="form-section-title" >入学年份</div>
+                            <select class="form-section-content" name="year" id="year">
+                                <for start="2013" end="1949" comparison="gt" step="-1">
+                                    <if condition="$profile['data']['year'] eq $i">
+                                       <option value="{$i}" selected='true'>{$i}</option>
+                                    <else />
+                                       <option value="{$i}">{$i}</option>
+                                    </if>
+                                </for>
+                            </select></li>
+                            <li><div id = "basicInformationSubmit">
+                                <div class = "btn btn-blue" id = "nextStep">下一步</div>
+                                <div class = "btn btn-danger" id = "skip">跳过</div> 
+                            </div></li>
+                    </ul>   
+              </form>
+            </div>
+        </div>
+       <include file="Public:foot" />
+       <script type="text/javascript" src="/style/js/common/jquery.form.min.js?v={$VERSION}"></script>
+       <script type="text/javascript" src='/style/js/intl_register/v1/completeBasicInfomation.js?v={$VERSION}'></script>
+       <script type="text/javascript" src='/style/js/intl_register/v1/school-select.js?v={$VERSION}'></script> 
+    </body>
+</html>

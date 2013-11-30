@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>修改我的发布信息 | 校淘</title>
+        <include file="Public:meta-keywords" />
+        <link type="text/css" rel="stylesheet" href="/style/css/common/school-select.css?v={$VERSION}" />
+        <link type="text/css" rel="stylesheet" href="/style/css/intl_pub/v1/change_detail.css?v={$VERSION}" />
+    </head>
+    <body>
+        <include file="Public:header-new" />
+        <include file="Public:search-block" />
+        <include file="Public:nav_no_focus" />
+            <div class="site-main  site-change-detail-main bg-index-site">
+                <div class="container site-body site-change-detail-body">
+                    <div class="upper-detail">
+                        <ul class="itm-info" id="itm-info">
+                            <li><span class="alert-danger alert">请填入您的物品信息</span></li>
+                            <input type="hidden" id="itm-id" value="{$pubData['pub_id']}"/>
+                            <li class="itm-deal-type"><label class="label">交易类型</label>
+                         	<if condition="$pubData['isbuy'] eq 1">
+                                		<label for="itm-deal-sell">出售</label><input type="radio" id="itm-deal-sale" class="itm-deal-input" name="itm-deal-radio" value="0"/>
+                                		<label for="itm-deal-buy">求购</label><input type="radio" id="itm-deal-buy" class="itm-deal-input" checked  name="itm-deal-radio" value="1" />
+				<else />
+				 	<label for="itm-deal-sell">出售</label><input type="radio" id="itm-deal-sale" class="itm-deal-input" checked name="itm-deal-radio" value="0"/>
+                                		<label for="itm-deal-buy">求购</label><input type="radio" id="itm-deal-buy" class="itm-deal-input"  name="itm-deal-radio" value="1" />
+				</if>
+                            </li>
+                                <li class="itm-by-type"><label class="label">类型</label>
+				<if condition="$pubData['by'] eq 1">
+                                		<label for="itm-deal-personal">个人</label><input  id="itm-deal-personal" type="radio" class="itm-deal-input" name="itm-deal-by" value="0"/>
+                                		<label for="itm-deal-business">商家</label><input type="radio" id="itm-deal-business" class="itm-deal-input" checked name="itm-deal-by" value="1" />
+				<else />
+					<label for="itm-deal-personal">个人</label><input  id="itm-deal-personal" type="radio" class="itm-deal-input" checked name="itm-deal-by" value="0"/>
+                                		<label for="itm-deal-business">商家</label><input type="radio" id="itm-deal-business" class="itm-deal-input" name="itm-deal-by" value="1" />
+				</if>
+                            </li>
+
+                            <li><label for="itm-title" class="label">商品标题</label><input type="text" id="itm-title" name="itm-title" class="item-title itm-input" value="{$pubData['title']}" /><span class="notice"></span></li>
+                            <li><label for="itm-subtype" class="label">小类</label>
+                                <select id="itm-sub-type" name="itm-subtype" class="itm-sub-type itm-input" >
+                                    <volist name="subTypeList" id="vo">
+                                        <if condition="$pubData['sub_type'] eq $vo['type_id']">
+                                            <option type_id='{$vo["type_id"]}'  selected='true' value='{$vo["type"]}'>{$vo["type"]}</option>
+                                        <else />
+                                            <option type_id='{$vo["type_id"]}' value='{$vo["type"]}'>{$vo["type"]}</option>
+                                        </if>
+                                    </volist>
+                                </select>
+                            </li>
+                            <li><label for="itm-price" class="label">价格</label><input class="item-price itm-input" type="text" name="itm-price" id="itm-price"  value="{$pubData['price']}" /><span class="notice"></span></li>
+                            <li><label for="itm-saler" class="label" >联系人</label><input type="text" name="itm-saler" id="itm-saler" class="item-user-name itm-input" value="{$pubData['saler']}" /><span class="notice"></span></li>
+                            <li><label for="itm-phone" class="label" >电话/QQ</label><input class="item-user-phone itm-input" type="text" name="itm-phone"  id="itm-phone" value="{$pubData['phone']}" /><span class="notice"></span></li>
+
+                         </ul>
+                         <div class="image-box">
+                            <div class="big-img">
+                                <img src="imgURL/{$pubData['image_data']}" alt="校淘" />
+                            </div>
+                            <div class="img-select">
+                                <ul class="unstyled">
+                                    <volist name="image" id="vo">
+                                        <li><img class="itm-img" src="imgURL/{$vo}" alt="{$pubData['title']}"/></li>
+                                    </volist>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                     
+                    <div class="down-detail">
+                        <div class="container">
+                            <div class="itm-content-title"><span>宝贝详情修改</span></div>
+                            <script id="editor" class="itm-add-content" name="editor">{$pubData['content']}</script>
+                        </div>
+                        <div class="sb-step container">
+                            <div class="btn btn-blue" id="pub">提交修改</div>
+                         </div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        <include file="Public:foot" />
+        <script type="text/javascript" src="/style/js/common/jquery.form.js?v={$VERSION}"></script>
+        <script type='text/javascript' src='/style/js/common/school-select.js?v={$VERSION}' ></script>
+        <script type="text/javascript" src="/style/js/intl_pub/thirty/ueditor/editor_all.js?v={$VERSION}"></script>
+        <script type="text/javascript" src="/style/js/intl_pub/thirty/ueditor/editor_config.js?v={$VERSION}"></script>
+        <script type="text/javascript" src="/style/js/intl_pub/v1/change_detail.js?v={$VERSION}"></script>
+    </body>
+</html>

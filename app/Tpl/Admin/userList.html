@@ -1,0 +1,30 @@
+<!DOCTYPE>
+<html>
+    <include file="Admin:model_head" />
+    <include file="Admin:model_body" />
+    <div id="user-detail">
+        <table class="table userList-detail">
+            <caption>UserList</caption>
+            <thead>
+                <tr><th>ID</th><th>等级</th><th>名字</th><th>邮箱</th><th>密码</th><th>市</th><th>区</th><th>修改</th><th>删除</th></tr>
+            </thead>
+            <tbody>
+                <volist name="userData" id="udata">
+                    <tr>
+                        <td> <input type="text" name="user-id" value="{$udata.uid}" title="{$udata.uid}" style="width:40px" /> </td>
+                        <td> <input type="text" name="user-admin_level" value="{$udata.admin_level}" title="{$udata.admin_level}" style="width:40px" /> </td>
+                        <td> <input type="text" name="user-name" value="{$udata.uname}" title="{$udata.uname}" /> </td>
+                        <td> <input type="text" name="user-email" value="{$udata.email}" title="{$udata.email}" /> </td>
+                        <td> <input type="text" name="user-password" value="{$udata.password}" title="{$udata.password}" /> </td>
+                        <td> <input type="text" name="user-city" value="{$udata.city}" title="{$udata.city}" /> </td>
+                        <td> <input type="text" name="user-area" value="{$udata.area}" title="{$udata.area}" /> </td>
+                        <td> <input type="button" class="userList-change" value="修改" /></td>
+                        <td> <input type="button" data-id="{$udata.uid}" class="userList-delete" id="userList-delete" value= "<?= $udata['isdel'] == 1 ? '恢复' : '删除' ?>" /></td>
+                    </tr>
+                </volist>
+            </tbody>
+        </table>
+        <div>{$page}</div>
+    </div>
+    <include file="Admin:model_foot" />
+</html>

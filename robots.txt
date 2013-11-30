@@ -1,0 +1,6 @@
+User-agent: *
+Disallow:/Admin
+Disallow:/Account/info
+Disallow:/style
+
+

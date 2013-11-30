@@ -1,0 +1,232 @@
+/****************************************Feedback***********************************************/
+.feedback_status {
+    position: fixed;
+    top: 180px;
+    right: -6px;
+    cursor: pointer;
+    border: 1px #1A9AA3 solid;
+    padding: 10px 5px 10px 11px;
+    background-color: #1A9AA3;
+    border-radius: 2px;
+}
+
+.feedback_status:hover {
+    right: 0px;
+}
+
+.feedback_title {
+  height: 90px;
+  width: 22px;
+  font-size: 15px;
+  color: #ffffff;
+}
+
+.feedback_body {
+  width: 500px;
+  height: 440px;
+  display: none;
+  position: fixed;
+  z-index: 999;
+  right: 33px;
+  top: 180px;
+  border: 2px solid #25b9c5;
+  background-color: #ffffff;
+}
+
+.feedback_contents {
+  width: 460px;
+  height: 360px;
+  margin-top: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+  background-color: #ffffff; 
+}
+
+
+.feedback-header {
+    position: relative;
+    width: 440px;
+    margin: 0 auto;
+    height: 20px;
+    padding: 5px 0px 10px 0;
+}
+.feedback-header .close-btn {
+    display: block;
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+    width: 19px;
+    height: 19px;
+    background: url(http://t.xiaoplus.com/style/img/common/icon/close-h.gif) 0 0 no-repeat;
+}
+
+.feedback-header .close-btn:hover {
+    background: url(http://t.xiaoplus.com/style/img/common/icon/close.gif) 0 0 no-repeat;
+}
+
+
+.feedback_text {
+    clear: both;
+    width: 420px;
+    height: 200px;
+    margin: 0 auto;
+    padding: 10px;
+	   background: #F8F8F8;
+    border: 1px solid #ddd;
+    overflow-y: auto;
+    word-break: break-all;
+    box-shadow: inset 0px 0px 5px #DDD;
+}
+
+.feedback_tips {
+  font-family: 微软雅黑;
+  font-size: 15px;
+  color: red;
+  height: 18px;
+  margin-left: 10px;
+}
+
+.feedback_words {
+    width: 430px;
+	display: block;
+    height: 40px;
+	margin: 0 auto;
+    padding: 5px;
+    outline: none;
+    border-radius: 3px;
+    border: 1px solid #DDD;
+}
+
+.feedback_email {
+  margin: 0 auto;
+  width: 400px;
+}
+
+.email {
+    width: 270px;
+    text-shadow: 0px 0px 2px #cccccc;
+    box-shadow: 0px 0px 4px #cccccc;
+    border-radius: 3px;
+    border: 1px solid #DDD;
+    outline: none;
+    padding: 4px 3px;
+    margin: 10px 0 0 5px;
+}
+
+.feedback_send {
+    width: 100px;
+    display: block;
+    background-color: #25b9c5;
+    border: 1px solid #25b9c5;
+    margin: 0 auto;
+    margin-top: 15px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-family: 微软雅黑;
+    color: #ffffff;
+}
+
+.feedback_words:focus {
+  border-color: #25b9c5;
+}
+
+.email:focus {
+  border-color: #25b9c5;
+}
+/****************************************FOOT*****************************************************/
+
+.footer {
+  clear: both;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
+  height: 150px;
+  background: #F9F9F9;
+  min-height: 40px;
+  vertical-align: bottom;
+  border-top: 2px solid #0bb;
+}
+
+.footer ul {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 0;
+}
+
+.footer .partner-block {
+  width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  font: normal 14px Arial, Simsun, sans-serif, "宋体";
+  margin-top: 20px;
+  height: 30px;
+}
+
+.footer .partner-block dd, .footer .partner-block dt{
+  display: inline;
+  width: 90px;
+}
+
+.footer .partner-block dd:after {
+  display: block;
+  visibility: visible;
+  height: 0;
+  content: " ";
+  clear:both;
+}
+
+.footer .help-block {
+  color: #808080;
+  text-align: center;
+  margin-top: 20px;
+  font: normal 14px Arial, Simsun, sans-serif, "宋体";
+}
+
+.footer ul li {
+  display: inline;
+  padding: 3px 5px 2px 5px;
+  width: 200px;
+  vertical-align: middle;
+}
+
+.footer ul li .aboutPartner {
+  margin-right: 10px;
+  color: #808080;
+  font: normal 14px Arial, Simsun, sans-serif, "宋体";
+}
+
+.footer .partner img {
+  height: 30px;
+  vertical-align: middle;
+}
+
+.footer .aboutXiaotao span {
+  padding-right: 5px;
+  padding-left: 5px;
+  color: #808080;
+}
+
+.footer a {
+  padding: 5px;
+  padding-left: 1px;
+  height: 10px;
+  color: #808080;
+  font-size: 14px;
+}
+
+.footer a:active {
+  color: #808080;
+}
+
+.footer a:visited {
+  color: #808080;
+}
+
+.footer .copyright {
+  text-align: center;
+  font: normal 14px Arial, Simsun, sans-serif, "宋体";
+  color: #808080;
+  margin-top: 10px;
+  padding-bottom: 20px;
+}

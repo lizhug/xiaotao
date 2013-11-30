@@ -1,0 +1,189 @@
+.user-info-body {
+    background-color: #fff;
+    margin-top: 100px;
+    -webkit-box-shadow: 0 0 0 1px #FFF,0 0 0 2px #dfdfdf,0 0 5px 3px #f0f0f0;
+    -moz-box-shadow: 0 0 0 1px #FFF,0 0 0 2px #dfdfdf,0 0 5px 3px #f0f0f0;
+        box-shadow: 0 0 0 1px #FFF,0 0 0 2px #dfdfdf,0 0 5px 3px #f0f0f0;
+}
+
+.user-info-body .user-main {
+    position: relative;
+    padding-top: 10px;
+    margin: 0 auto;
+    height: 160px;
+    width: 910px;
+
+}
+
+.user-main .user-img {
+    position: absolute;
+    display: block;
+    top: -80px;
+    border: 1px solid #cccccc;
+    background: #fff;
+    padding: 10px;
+    height: 160px;
+    width: 160px;
+    left: 0;
+}
+.user-main-sider {
+    width: 600px;
+    margin-left: 200px;
+}
+
+.user-main-sider .user-name {
+    display: block;
+    text-align: left;
+    overflow: hidden;
+    padding: 10px 0 10px 10px;
+    font: normal 26px Arial;
+    color: #333333;
+}
+.user-main-sider .user-detail-value {
+    display: block;
+    text-align: left;
+    overflow: hidden;
+    color: #808080;
+    margin-top: 5px;
+    padding: 10px 0 10px 10px;
+    font-size: 14px;
+}
+
+.get-more-user-info {
+    margin-left: 10px;
+    color: #0bb;
+}
+
+#get-more-userinfo:hover {
+    text-decoration: underline;
+}
+
+/**********************************主体下部内容块*****************************************/
+
+#user-info-view {
+    display: none;
+    margin: 20px 0 30px 0;
+}
+
+.user-info-body li {
+    list-style: none;
+    margin-top: 5px;
+}
+
+.user-info-body li:after {
+    display: block;
+    visibility: visible;
+    content: " ";
+    height: 0;
+    clear: both;
+}
+
+.intr, .contact, .edu, .pub {
+    margin: auto;
+    clear: right;
+}
+.user-section-title {
+    display: block;
+    border-bottom: 2px solid #2DB8AD;
+    padding-left: 10px;
+    height: 29px;
+}
+
+.user-section-title strong {
+    color: #333;
+    background-color: #f8fbfc;
+    border: 1px solid #CBE0E3;
+    background-image: -webkit-linear-gradient(bottom,#d4ebee 0,#f8fbfc 15%);
+    background-image: -moz-linear-gradient(bottom,#d4ebee 0,#f8fbfc 15%);
+    background-image: linear-gradient(bottom,#d4ebee 0,#f8fbfc 15%);
+    padding: 10px 15px;
+}
+
+.user-detail-title {
+    float: left;
+    width: 300px;
+    height: 20px;
+    font: bold 15px/100% sans-serif;
+    padding: 4px 0 4px 20px;
+    text-align: left;
+}
+
+.user-detail-value{
+    float: left;
+    width: 300px;
+    height: 20px;
+    font-size: 15px;
+    margin: 5px 0 10px 0;
+    text-align: left;
+}
+
+.pub .pub-sub {
+    font-size: 15px;
+    clear:both;
+    padding: 6px 0;
+    border-bottom: 1px solid #cccccc;
+}
+.pub .pub-sub:hover {
+    background: #F3F8E9;
+}
+
+.pub .user-detail-title {
+    width: 700px;
+    display: block;
+    float: left;
+    text-align: left;
+}
+
+.pub .user-detail-title .title {
+    display: block;
+    float: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 439px;
+    padding: 5px 0;
+    overflow: hidden;
+    color: #0bb;
+}
+
+.pub .user-detail-title .title:visited {
+    color: #0bb;
+}
+
+.pub .user-detail-title .title:hover {
+    color: #0bb;
+    text-decoration: underline;
+}
+
+.pub .user-detail-title .catalog {
+    display: block;
+    float: left;
+    font-size: 12px;
+    color: #999999;
+    overflow: hidden;
+    padding: 5px 0 5px 15px;
+}
+
+.pub .date {
+    display: block;
+    float: right;
+    padding: 5px 0;
+    text-align: right;
+    padding-right: 20px;
+    font-size: 15px;
+    color: #666666;
+}
+
+#get-more {
+    height: 35px;
+    background: #25B9C5;
+    margin: 0 auto;
+    padding-top: 10px;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+    vertical-align: middle;
+}
+#get-more:hover {
+    cursor: pointer;
+}

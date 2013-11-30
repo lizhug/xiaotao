@@ -1,0 +1,94 @@
+<div class="notice-wrap" id="notice-wrap">
+	<div class="notice-box">
+		<div class="notice-box-title">订购物品列表<img class="notice-box-close" src="http://t.xiaoplus.com/style/img/intl_activity/close.gif" title="关闭面板" alt="close" /></div>
+		<div class="notice-box-content">
+			<ul class="already-buy-list">
+				<li class="list-title"><span class="item-url-title">标题</span><a class="" href="#"></a></li>
+				<if condition="$myList[0] eq ''">
+				<div class="btn btn-pass" style="display:block">你还没有选购物品喔!</div>
+				<else />
+				<volist name="myList" id="vo">
+				<li class="already-buy-list-item">
+					<a class="item-url" title="{$vo['url']}" href="#">{$vo['url']}</a>
+					<if condition="$vo['completed'] eq 1">
+						<span class="btn btn-deep">已完成</span>
+					<else />
+						<span class="btn btn-pass" itemId="{$vo['id']}">标记完成</span>
+						<span class="btn btn-danger" itemId="{$vo['id']}">取消订单</span>
+					</if>
+				</li>	
+				</volist>	
+				</if>	
+			</ul>
+  		</div>
+	</div>
+</div>
+<style type="text/css">
+
+.notice-box {
+	height: auto;
+	padding-bottom: 20px;
+	overflow: auto;
+}
+.notice-box-content {
+	text-align: center;
+	padding: 0;
+}
+
+.already-buy-list {
+	list-style-type: none;
+
+}
+
+.already-buy-list > li {
+	background: #FFFDEE;
+	border-bottom: 1px solid #DDDDDD;
+	height: 60px;
+}
+
+.already-buy-list > li .btn-danger, .already-buy-list > li .btn-pass, .already-buy-list > li .btn-deep {
+	display: block;
+	float: right;
+	margin: 8px;
+	width: 60px;
+}
+
+.already-buy-list > li:after {
+	display: block;
+	visibility: visible;
+	content: " ";
+	height: 0;
+	clear: both;
+}
+
+.already-buy-list .item-url {
+	display: block;
+	float: left;
+	width: 250px;
+	padding: 20px 10px;
+	text-align: left;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	color: #0bb;
+}
+
+.already-buy-list > .list-title {
+	height: 35px;
+	font: bold 18px/20px Arial, "Microsoft yahei", "微软雅黑";
+}
+
+.already-buy-list .item-url-title {
+	display: block;
+	float: left;
+	width: 250px;
+	text-align: left;
+	color: #333;
+	padding: 8px;
+}
+
+.already-buy-list .item-url:hover {
+	text-decoration: underline;
+}
+
+
+</style>

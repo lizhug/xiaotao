@@ -1,0 +1,91 @@
+<div class="notice-wrap" id="notice-wrap">
+	<div class="notice-box">
+		<div class="notice-box-title">物品提交<img class="notice-box-close" src="http://t.xiaoplus.com/style/img/intl_activity/close.gif" title="关闭面板" alt="close" /></div>
+		<div class="notice-box-content">
+			<ul class="buy-car-list">
+				<li><label>物品链接</label><input class="buy-car-input" id="item-url" type="text" placeholder="如: http://item.jd.com/10658646.html"/><span class="register-notice"></span></li>
+				<li><label>姓名</label><input class="buy-car-input" id="user-name" type="text" placeholder="您的姓名" /><span class="register-notice"></span></li>
+				<li><label>送货地址</label><input class="buy-car-input" id="user-addr" type="text" placeholder="地址" /><span class="register-notice"></span></li>
+				<li><label>手机号码</label><input class="buy-car-input" id="user-phone" type="text" placeholder="您常用的手机号" /><span class="register-notice"></span></li>
+				<li><label>备注</label><textarea style="height: 50px;padding:4px" id="user-addition" class="buy-car-input" placeholder="备注"></textarea></li>
+			</ul>
+			<div class="submit-check"><span id="submit-check-btn" class="btn btn-pass">确认提交</span></div>
+  		</div>
+	</div>
+</div>
+<style type="text/css">
+
+.notice-box {
+	height: auto;
+	padding-bottom: 20px;
+}
+.notice-box-content {
+	padding: 15px 20px 0;
+	text-align: center;
+}
+
+.notice-box-content .buy-car-list {
+	list-style-type: none;
+}
+
+.buy-car-list li {
+	margin-top: 10px;
+	height: 40px;
+}
+
+.buy-car-list li:after {
+	display: block;
+	visibility: visible;
+	content: " ";
+	height: 0;
+	clear: both;
+}
+
+.buy-car-list li > label {
+	display: block;
+	float: left;
+	font: normal 15px/20px Arial, "Microsoft yahei", sans-serif;
+	width: 70px;
+	text-align: right;
+	margin-left: 20px;
+	padding-top: 8px;
+}
+
+.buy-car-list .buy-car-input {
+	display: block;
+	float: left;
+	height: 30px;
+	margin-left: 25px;
+	width: 280px;
+	border: 1px solid #ccc;
+	padding-left: 5px;
+	resize: none;
+}
+
+.buy-car-list .buy-car-input:focus {
+	outline: 0;
+	background: #FFF;
+	border: 1px solid #0bb;
+	-moz-box-shadow: inset 0 0 8px rgba(0,0,0,0.1);
+	-webkit-box-shadow: inset 0 0 8px rgba(0,0,0,0.1);
+	box-shadow: inset 0 0 8px rgba(0,0,0,0.1);
+	-webkit-transition: all .2s linear;
+	-moz-transition: all .2s linear;
+	transition: all .2s linear;
+}
+
+.submit-check {
+	margin-top: 35px;
+}
+
+ .register-notice {
+	display: block;
+	float: left;
+	height: 28px;
+	line-height: 28px;
+	margin: 5px 0 0 5px;
+	padding: 0 10px 0 10px;
+	color: #A8A8A8;
+}
+
+</style>

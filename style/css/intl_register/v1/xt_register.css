@@ -1,0 +1,193 @@
+/************************************Register******************************************/
+
+#form-register {
+    width: 978px;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding-bottom: 40px;
+    border: 1px solid #CBE0E3;
+    background: #fff;
+    -webkit-box-shadow: 0 0 0 1px #FFF,0 0 0 2px #dfdfdf,0 0 5px 3px #f0f0f0;
+    -moz-box-shadow: 0 0 0 1px #FFF,0 0 0 2px #dfdfdf,0 0 5px 3px #f0f0f0;
+    box-shadow: 0 0 0 1px #FFF,0 0 0 2px #dfdfdf,0 0 5px 3px #f0f0f0;
+}
+
+.site-register {
+    float: left;
+    width: 590px;
+    border-right: 1px solid #cccccc;;
+    margin-top: 30px;
+}
+#tip {
+    display: block;
+    width: 185px;
+    height: 20px;
+    margin: 10px 0 10px 182px;
+    text-align: left;
+    color: red;
+}
+
+#user, #email, #pwd, #rpwd, #verifyCode {
+    width: 250px;
+    height: 35px;
+    display: block;
+    border: 1px solid #cccccc;
+    float: left;
+    padding-left: 5px;
+    outline: none;
+    color: gray;
+    margin: 0 0 25px 0;
+    box-shadow: inset 0px 1px 4px #cccccc;
+    line-height: 36px\9;
+}
+
+#verifyCode {
+    width: 100px;
+}
+#user:focus, #email:focus, #pwd:focus, #rpwd:focus, #verifyCode:focus{
+    box-shadow: none;
+    border: 1px solid  #25B9C5;
+    box-shadow: 0px 0px 5px #25b9c5;
+}
+.con {
+    display: block;
+    float: left;
+    width: 80px;
+    height: 26px;
+    padding-top: 7px;
+    margin-left: 100px;
+}
+
+.register-notice {
+    display: block;
+    float: left;
+    height: 28px;
+    line-height: 28px;
+    margin: 5px 0 0 5px;
+    padding: 0 10px 0 10px;
+    color: #A8A8A8;
+}
+
+#verify {
+    float: left;
+    margin-left: 20px;
+    height: 35px;
+}
+
+#submitRegister {
+    float: left;
+    display: block;
+    margin-left: 180px;
+}
+
+.valid-tip {
+    margin-top: 8px;
+    +margin-top: 8px;
+    line-height: 20px;
+}
+
+#deal {
+    color: #0BB;
+    display: block;
+    float: left;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+#deal:visited {
+    color: #0bb;
+}
+
+#deal:hover {
+    text-decoration: underline;
+}
+.form-input:after, #form-register:after {
+    display: block;
+    content: " ";
+    visibility: visible;
+    height: 0px;
+    clear: both;
+}
+
+
+/**********************************Login*************************************/
+
+
+
+.site-login {
+    float: left;
+    width: 300px;
+    margin: 165px 0 0 30px;
+    padding-left: 50px;
+}
+
+.site-login h2 {
+    display: inline;
+    font-size: 20px;
+}
+
+.site-login > a {
+    color: #0066FF;
+    margin-left: 10px;
+}
+
+.site-login > a:hover {
+    text-decoration: underline;
+    color: #0bb;
+}
+
+/**********************************wblogin*************************************/
+
+
+.wb-login {
+    float: left;
+    width: 300px;
+    height: 30px;
+    margin: 20px 0 0 0px;
+}
+
+.sns-login-tip {
+    display: block;
+    float: left;
+}
+
+.sns-login-tip span{
+    font-size: 14px;
+}
+
+.weibo-login {
+    display: block;
+    float: left;
+    width: 0px;
+    margin: 0 0 0 10px;
+    vertical-align: middle;
+    color: #444444;
+    padding-left: 20px;
+    font-size: 14px;
+    height: 16px;
+    background: url(http://t.xiaoplus.com/style/img/intl_login/icon/login_sns_btn.gif) 0 -32px no-repeat;
+}
+
+.weibo-login:hover {
+    background: url(http://t.xiaoplus.com/style/img/intl_login/icon/login_sns_btn.gif) 0 -48px no-repeat;
+    text-decoration: underline;
+    color: #0bb;
+}
+
+.qq-login {
+    display: block;
+    float: left;
+    width: 0px;
+    margin: 0px 0 0 10px;
+    vertical-align: middle;
+    color: #444444;
+    padding-left: 20px;
+    font-size: 14px;
+    height: 16px;
+    background: url(http://t.xiaoplus.com/style/img/intl_login/icon/login_sns_btn.gif) 0 0px no-repeat;
+}
+.qq-login:hover {
+    background: url(http://t.xiaoplus.com/style/img/intl_login/icon/login_sns_btn.gif) 0 -16px no-repeat;
+    text-decoration: underline;
+    color: #0bb;
+}

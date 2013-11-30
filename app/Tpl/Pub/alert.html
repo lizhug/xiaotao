@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>提示 | 校淘</title>
+        <include file="Public:meta-keywords" />
+        <link type="text/css" rel="stylesheet" href="/style/css/common/login_notify_error.css?v={$VERSION}" />
+    </head>
+    <body>
+    	<include file="Public:header-new" />
+        <include file="Public:search-block" />
+        <include file="Public:nav_no_focus" />
+        <div class="site-main bg-index-site">
+            <div class="site-body error-notify">
+                <h2>提示</h2>
+                <div class="alert alert-danger error-alert">
+        		验证后才能发布, 请检查您邮箱中的账号验证邮件! <a href="domainURL" id="second">3</a>秒钟后跳转
+        	</div>
+        	<img class="img" src="/style/img/common/btn/error_bg.png" />
+            </div>
+        </div>
+        <include file="Public:foot" />    
+        <script type="text/javascript">
+        	setInterval(function() {
+        		$("#second").text(parseInt($("#second").text(), 10) - 1);
+        		if ($("#second").text() === "1") {
+        			window.location.href = "domainURL";
+        		}
+        	}, 1000);
+
+        </script>
+    </body>
+
+</html>
