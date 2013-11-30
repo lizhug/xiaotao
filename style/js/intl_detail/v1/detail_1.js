@@ -132,4 +132,14 @@
         }
     }
 
+    //查看大图
+    $(".big-img img").bind("click", function() {
+        $(".img-area img").attr("src", $(".big-img img").attr("src"));
+        $(".huge-img").toggle("normal");
+    })
+
+    $(".img-container img").bind("click", function() {
+        $(".huge-img").hide();
+    })
+
 });
