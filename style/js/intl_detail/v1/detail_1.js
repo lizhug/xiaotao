@@ -136,12 +136,10 @@
     $(".big-img img").bind("click", function() {
         $(".img-area img").attr("src", $(".big-img img").attr("src"));
         $(".huge-img").toggle("normal");
-        $(".uname").hide();
     })
 
     $(".img-container img").bind("click", function() {
         $(".huge-img").hide();
-        $(".uname").show();
     })
 
 });
